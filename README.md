@@ -12,8 +12,11 @@ This contains my practice and preparation for interview/whiteboarding problems. 
  - [ ] Insertion
 
 ### Data structures
-- [ ] Hash table
-- [ ] Linked list
+- Hash table
+ - [ ] Fixed table
+- Linked list
+ - [ ] Singly linked
+ - [ ] Doubly linked
 - Trees
  - [ ] Binary search 
  - [ ] Red black
