@@ -1,4 +1,4 @@
-var binarysearch = require('../../src/sorting/binarysearch');
+var binarysearch = require('../../src/search/binarysearch');
 
 describe('binarysearch', () => {
   it('should return the index of the value', () => {
