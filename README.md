@@ -8,7 +8,7 @@ This contains my practice and preparation for interview/whiteboarding problems. 
 - Searching
   - [x] Binary search
 - Sorting
- - [ ] Merge
+ - [x] Merge
  - [ ] Insertion
 
 ### Data structures
