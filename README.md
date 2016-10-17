@@ -6,7 +6,7 @@ This contains my practice and preparation for interview/whiteboarding problems. 
 ### Algorithms
 
 - Searching
-  - [ ] Binary search
+  - [x] Binary search
 - Sorting
  - [ ] Merge
  - [ ] Insertion
