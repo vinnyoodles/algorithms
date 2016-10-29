@@ -8,13 +8,13 @@ describe('mergesort', () => {
 
   it('should work for an empty array', () => {
     expect(mergesort([])).toEqual([]);
-  })
+  });
 
   it('should work for an array of a single value', () => {
     expect(mergesort([1])).toEqual([1]);
-  })
+  });
 
   it('should work for an already sorted array', () => {
     expect(mergesort([1, 2, 3])).toEqual([1, 2, 3]);
-  })
+  });
 });

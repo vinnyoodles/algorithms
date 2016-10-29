@@ -18,7 +18,7 @@ This contains my practice and preparation for interview/whiteboarding problems. 
  - [ ] Singly linked
  - [ ] Doubly linked
 - Trees
- - [ ] Binary search 
+ - [ ] Binary search
  - [ ] Red black
  - [ ] Trie
 - Graphs and graph traversals
