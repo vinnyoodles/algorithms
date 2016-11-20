@@ -1,4 +1,4 @@
-var pascalsTriangle = require('../../src/recusrion/pascalsTriangle');
+var pascalsTriangle = require('../../src/recursion/pascalsTriangle');
 
 describe('pascalsTriangle', () => {
   it('should return pascal\'s triangle', () => {
