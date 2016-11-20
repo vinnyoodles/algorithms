@@ -4,9 +4,9 @@ describe('numberOfPathsInMatrix', () => {
   it('should return the number of paths in the matrix', () => {
     expect(numberOfPathsInMatrix([
       [0, 1, 1],
-      [1, 0, 1],
-      [1, 1, 0]
-    ]).toEqual(1));
+      [0, 0, 1],
+      [1, 0, 0]
+    ])).toEqual(1);
   });
 
   it('should return the number of paths in the matrix', () => {
@@ -14,7 +14,7 @@ describe('numberOfPathsInMatrix', () => {
       [0, 0, 0],
       [0, 0, 0],
       [0, 0, 0]
-    ]).toEqual(6));
+    ])).toEqual(6);
   });
 
   it('should return the number of paths in the matrix', () => {
@@ -22,6 +22,6 @@ describe('numberOfPathsInMatrix', () => {
       [0, 1, 1],
       [1, 1, 1],
       [1, 1, 0]
-    ]).toEqual(0));
+    ])).toEqual(0);
   });
 });
