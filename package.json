@@ -1,11 +1,15 @@
 {
   "name": "algorithms",
-    "version": "1.0.0",
-    "scripts": {
-      "test": "jasmine"
-    },
-    "devDependencies": {
-      "jasmine": "2.3.1",
-      "underscore": "1.8.3"
-    }
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jasmine",
+    "coverage": "istanbul cover jasmine",
+    "coveralls": "npm run coverage && cat coverage/lcov.info | coveralls"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.15",
+    "istanbul": "^0.4.5",
+    "jasmine": "2.3.1",
+    "underscore": "1.8.3"
+  }
 }
