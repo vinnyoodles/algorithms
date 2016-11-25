@@ -1,5 +1,5 @@
 /**
- * Find the minimum number of operations to equalize all values in the array.
+ * Find the minimum number of operations to equalize all values in a unique array.
  * An operation is incrementing a value by 1.
  *
  * Ex. [1, 2, 3] requires 3 operations to make [3, 3, 3].

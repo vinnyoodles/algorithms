@@ -1,10 +1,10 @@
 /**
  * Given an array, find the longest subarray whose sum is less than or equal to k.
  * A subarray is defined to be a contiguous range of values that is within the bounds of the given array.
-
+ *
  * @param  {Array} array
  * @param  {Int} k
- * @return {Int}
+ * @return {Int} the length of the greatest subarray.
  */
 function greatestSubarray(arr, k) {
   if (!arr.length) {
@@ -30,8 +30,9 @@ function greatestSubarray(arr, k) {
     // If the current sum is greater than k, then move the pointer over.
     // Check if the current length is higher than the highscore, if so reset it.
     } else {
+      // Make sure the score exists.
       greatestLength = greatestLength || 0;
-      var newLength = index - pointer + 1;
+      var newLength = index - pointer;
       if (newLength > greatestLength && count <= k) {
         greatestLength = newLength;
       }
@@ -40,7 +41,13 @@ function greatestSubarray(arr, k) {
       pointer ++;
     }
   });
-  return greatestLength === undefined ? arr.length : greatestLength;
+
+  // If the greatestLength is 0, then the sum was always greater than k.
+  if (greatestLength === 0) return 0;
+
+  // If its undefined, then the sum was never greater than k.
+  else if (greatestLength === undefined) return arr.length;
+  return greatestLength > arr.length - pointer ? greatestLength : arr.length - pointer;
 }
 
 module.exports = greatestSubarray;

@@ -11,6 +11,7 @@ describe('minAdditions', () => {
 
   it('should find the minimum number of operations', () => {
     expect(minAdditions([1, 10, 20, 30, 40, 50])).toEqual(145);
+    expect(minAdditions([50, 40, 30, 20, 10, 1])).toEqual(145);
   });
 
   it('should find the minimum number of operations', () => {
