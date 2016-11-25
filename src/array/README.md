@@ -1,5 +1,3 @@
-## Array
-
 ## Table of Contents
 - [Greatest Subarray](#greatest-subarry)
 - [Minimum Additions](#minimum-additions)
@@ -38,8 +36,6 @@ When the current sum is greater than k, then we must decrease the size of the wi
 The window will keep moving until the right pointer reaches the end. At that point, we know what the longest subarray is because we have kept track of it while iterating.
 
 [Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/array/greatestSubarray.js)
-
----
 
 ## Minimum Additions
 #### Problem
