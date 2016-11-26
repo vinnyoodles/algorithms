@@ -15,7 +15,7 @@ function mergesort(array) {
   var left = array.slice(0, midpoint);
   var right = array.slice(midpoint, array.length);
 
-  // Conquery each individual subarray.
+  // Conquer each individual subarray.
   left = mergesort(left);
   right = mergesort(right);
 

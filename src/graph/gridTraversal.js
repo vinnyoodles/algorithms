@@ -11,7 +11,7 @@ var largestNeighbor = require('./largestNeighbor');
  *
  * A node's neighbor is confined to only the cardinal directions (north, south, east and west).
  * When traversing, prioritize neighbors with greatest value.
- * The traveral ends when the node no longer has an neighbors with a value greater than 0.
+ * The traversal ends when the node no longer has an neighbors with a value greater than 0.
  *
  * @param {2D Array} grid where each node contains an integer.
  * @param {Integer} x start location.
