@@ -1,6 +1,7 @@
 ## Table of Contents
 - [Largest Neighbor](#largest-neighbor)
 - [Grid Traversal by the Largest Neighbor](#grid-traversal-by-the-largest-neighbor)
+- [Tree Traversal](#tree-traversal)
 
 ## Largest Neighbor
 #### Problem
@@ -40,3 +41,30 @@ The solution uses a depth first search with the [Largest Neighbor](#largest-neig
 The space and time complexities for this is O(n*m) for both where *n* is the width and *m* is the height.
 
 [Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/gridTraversal.js)
+
+## Tree Traversal
+#### Problem
+Given a binary tree, return the path for the three types of traversal: pre order, in order, and post order.
+
+#### Input/Output
+```
+Input:
+    4
+   / \
+  2   5
+ / \   \
+1   3   6
+
+Output: [4, 2, 1, 3, 5, 6] // Pre order
+        [1, 2, 3, 4, 5, 6] // In order
+        [1, 3, 2, 6, 5, 4] // Post order
+```
+
+#### Explanation
+For all three traversal, create an array and depending on the order, push the TreeNode value into the array. The pre order traversal goes current, left, then right node. The in order traversal goes left, current, then right node. The post order traversal goes left, right, then current node.
+
+An easy way to remember this is to push the current node depending on the name of the traversal. So for pre order traversal, the current node goes before the left and right. Notice how the left node is always before the right node for all the traversals. Something else to notice is that if the tree is a binary search tree, then an in order traversal's path would be sorted.
+
+All traversals run in O(n) time and space where n is the number of nodes in the tree.
+
+[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/TreeNode.js)
