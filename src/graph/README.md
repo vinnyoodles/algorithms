@@ -2,6 +2,7 @@
 - [Largest Neighbor](#largest-neighbor)
 - [Grid Traversal by the Largest Neighbor](#grid-traversal-by-the-largest-neighbor)
 - [Tree Traversal](#tree-traversal)
+- [Sort Tree by Columns](#sort-tree-by-columns)
 
 ## Largest Neighbor
 #### Problem
@@ -68,3 +69,49 @@ An easy way to remember this is to push the current node depending on the name o
 All traversals run in O(n) time and space where n is the number of nodes in the tree.
 
 [Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/TreeNode.js)
+
+## Sort Tree by Columns
+#### Problem
+Given a binary tree, return an array with the values in the array in column sorted order.
+
+#### Input/Output
+```
+Input:
+    4
+   / \
+  2   5
+ / \   \
+1   3   6
+Output: [1, 2, 4, 3, 5, 6]
+```
+
+#### Explanation
+A column sort can be defined with the follow criteria:
+- The root node is in row 0.
+- Any node that is a child of another node will be in the row immediately following that of its parent.
+- Any node that is a left child will be in the column immediately preceding that of its parent.
+- Any node that is a right child will be in the column immediately following that of its parent.
+- Any node that is a left child with a parent that is a right child will be in the same column as its grandparent.
+- Any node that is a right child with a parent that is a left child will be in the same column as its grandparent.
+- If two nodes share the same row and column, the node whose parent is a left child comes first.
+
+Using the example tree, there are five columns: `[1], [2], [4, 3], [5], [6]`. The output array would then be the concatenation of all the columns in a top down order.
+
+The trick for this problem is to use a breadth first search and a table to store each node under its column number. The column number is determined from its parent's column. A left child's column is `parent - 1` and a right child's column is `parent + 1`. Starting with the root node of column 0, traverse through the tree by each level.
+
+The table for the above tree would then be
+```
+{
+   0: [4, 3],
+  -1: [2],
+   1: [5],
+  -2: [1],
+   2: [6]
+}
+```
+
+The only issue now is that the tables do not store the columns in any order so we have to know the smallest column index and the largest and iterate the table with the indexes in between inclusively.
+
+The runtime and space complexity would be O(n) where n is the number of nodes in the tree. It is linear for the time complexity because it has to visit each node once when filling the table and a second iteration for the table itself. The space complexity is linear because we have to store the columns in a table as well as the returning array.
+
+[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/columnSort.js)

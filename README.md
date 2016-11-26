@@ -11,6 +11,7 @@ This contains my practice and preparation for interview/whiteboarding problems. 
 - [Graph: Largest Neighbor](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/largestNeighbor.js)
 - [Graph: Traverse by the Largest Neighbor](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/gridTraversal.js)
 - [Graph: Tree Traversal](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/TreeNode.js)
+- [Graph: Sort Tree by Columns](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/columnSort.js)
 - [Linked List: Reverse List](https://github.com/vinnyoodles/algorithms/blob/master/src/linkedlist/reverseList.js)
 - [Linked List: Sum Two Lists](https://github.com/vinnyoodles/algorithms/blob/master/src/linkedlist/sumLists.js)
 - [Recursion: Depth of an Array](https://github.com/vinnyoodles/algorithms/blob/master/src/recursion/depthFinder.js)
