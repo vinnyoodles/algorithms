@@ -3,6 +3,7 @@
 - [Grid Traversal by the Largest Neighbor](#grid-traversal-by-the-largest-neighbor)
 - [Tree Traversal](#tree-traversal)
 - [Sort Tree by Columns](#sort-tree-by-columns)
+- [Path Sum](#path-sum)
 
 ## Largest Neighbor
 #### Problem
@@ -115,3 +116,30 @@ The only issue now is that the tables do not store the columns in any order so w
 The runtime and space complexity would be O(n) where n is the number of nodes in the tree. It is linear for the time complexity because it has to visit each node once when filling the table and a second iteration for the table itself. The space complexity is linear because we have to store the columns in a table as well as the returning array.
 
 [Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/columnSort.js)
+
+## Path Sum
+
+#### Problem
+Given a root node to a tree and a target value, *k*, return true if the tree contains a path between the root and any leaf such that the sum of all the values of the nodes on the path equal the target value.
+
+#### Input/Output
+```
+Input:
+    4
+   / \
+  2   5
+ / \   \
+1   3   6, 9
+Output: true
+```
+
+#### Explanation
+The given example has a path that sums up to 9, `[4, 2, 3]`. The solution can be solved using either breadth first search or depth first search.
+
+This solution will use depth first search as it will make a recursive solution simpler. The idea is to start with the *k* value for the root node and traverse through the tree while looking for *k - n* where *n* is the current node's value.
+
+So in the example, it would start at the root node with *k = 9*. When it traverses to the left subtree, it'll look for a path with *k = 5* since `k - rootNode = 9 - 4`. Once it reaches the first leaf node, 1, it will check if that leaf node's value is __**equal**__ to k, so *1 != 3*. The next leaf node, 3, is a valid path so end the traversal and return true.
+
+The time and space complexity is O(n) and O(1) respectively where n is the number of nodes in the tree.
+
+[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/pathSum.js)
