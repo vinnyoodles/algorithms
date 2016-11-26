@@ -1,20 +1,30 @@
 var TreeNode = require('../../src/graph/TreeNode');
 
 describe('TreeNode', () => {
+  describe('constructor', () => {
+    it('should create a tree node', () => {
+      var node = new TreeNode(1);
+      expect(typeof node).toEqual('object');
+      expect(node.value).toEqual(1);
+      expect(typeof node.left).toEqual('object');
+      expect(typeof node.right).toEqual('object');
+    });
+
+    it('should create a tree with an array', () => {
+      var node = new TreeNode([1, 2, 3, 4, 5]);
+      expect(node.inOrder()).toEqual([1, 2, 3, 4, 5]);
+    });
+
+    it('should create an empty node with no values', () => {
+      var node = new TreeNode([]);
+      expect(typeof node).toEqual('object');
+      expect(node.value).toEqual(undefined);
+    });
+  });
+
   describe('traversal', () => {
     beforeEach(() => {
-      // Level 1
-      var root = this.root = new TreeNode(4);
-
-      // Level 2
-      var left = root.left = new TreeNode(2);
-      var right = root.right = new TreeNode(6);
-
-      // Level 3
-      left.left = new TreeNode(1);
-      left.right = new TreeNode(3);
-      right.left = new TreeNode(5);
-      right.right = new TreeNode(7);
+      this.root = new TreeNode([1, 2, 3, 4, 5, 6, 7]);
     });
 
     describe('pre order', () => {
