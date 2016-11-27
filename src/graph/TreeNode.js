@@ -55,4 +55,9 @@ TreeNode.prototype.postOrder = function(array) {
   return array;
 };
 
+TreeNode.prototype.isLeaf = function() {
+  if (!this || !this.value) return false;
+  return !((this.left && this.left.value) || (this.right && this.right.value));
+};
+
 module.exports = TreeNode;

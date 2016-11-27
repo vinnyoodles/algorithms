@@ -45,4 +45,29 @@ describe('TreeNode', () => {
       });
     });
   });
+
+  describe('isLeaf', () => {
+    it('should return false if the node doesn\'t exist', () => {
+      var node = new TreeNode(1);
+      node.value = null;
+      expect(node.isLeaf()).toEqual(false);
+    });
+
+    it('should return true if the node is a leaf node', () => {
+      var node = new TreeNode(1);
+      expect(node.isLeaf()).toEqual(true);
+    });
+
+    it('should return false with a left child', () => {
+      var node = new TreeNode(1);
+      node.left = new TreeNode(2);
+      expect(node.isLeaf()).toEqual(false);
+    });
+
+    it('should return false with a right child', () => {
+      var node = new TreeNode(1);
+      node.right = new TreeNode(2);
+      expect(node.isLeaf()).toEqual(false);
+    });
+  });
 });
