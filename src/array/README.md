@@ -1,6 +1,7 @@
 ## Table of Contents
 - [Greatest Subarray](#greatest-subarry)
 - [Minimum Additions](#minimum-additions)
+- [Jumping Array](#jumping-array)
 
 ## Greatest Subarray
 #### Problem
@@ -59,3 +60,41 @@ currentSum - theoreticalSum -> currentSum - (minimumValue * arrayLength)
 ```
 
 [Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/array/minAdditions.js)
+
+## Jumping Array
+#### Problem
+Given an array where each value represents the maximum distance a move can be made, return true if there is a possible path from the start of the array to the end.
+
+#### Input/Output
+```
+Input: [1, 2, 0, 1, 0]
+Output: true
+```
+
+#### Explanation
+The simplest solution may seem to be to start off at the beginning of the array and follow down every path. The runtime for this solution would grow exponentially especially for arrays with large jump distances.
+
+This problem can be solved more effectively using a backtracking implementation. Rather than starting at the beginning, we'll work from the end of the array and iterate backwards while making sure the indexes are possible to get to.
+
+Using the above example, we'll start from index 4.
+```
+[1, 2, 0, 1, 0]
+             ^
+```
+Then, iterate backwards until we find the first value that will get us to the current index.
+```
+[1, 2, 0, 1, 0]
+          ^
+
+[1, 2, 0, 1, 0]
+    ^
+
+[1, 2, 0, 1, 0]
+ ^
+```
+
+Once we've reached the beginning of the array, check if the pointer is at the beginning of the array. If it is, then we've confirmed there is a possible path from start to end.
+
+The time and space complexity for this solution would be O(n) and O(1) respectively.
+
+[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/array/jumpingArray.js)
