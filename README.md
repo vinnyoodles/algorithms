@@ -22,6 +22,7 @@ This contains my practice and preparation for interview/whiteboarding problems. 
 - [Search: Binary Search](https://github.com/vinnyoodles/algorithms/blob/master/src/search/binarySearch.js)
 - [Sort: Merge Sort](https://github.com/vinnyoodles/algorithms/blob/master/src/sort/mergesort.js)
 - [String: Longest Subsequence](https://github.com/vinnyoodles/algorithms/blob/master/src/string/longestSubsequence.js)
+- [System Design: LRU Cache](https://github.com/vinnyoodles/algorithms/blob/master/src/systemdesign/lrucache.js)
 
 ## Testing
 
