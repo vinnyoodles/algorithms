@@ -6,7 +6,7 @@
 This contains my practice and preparation for interview/whiteboarding problems. I'll start with the fundamentals and then begin working on more complicated algorithms.
 
 ## Table of Contents
-- [Array: Greatest Subarray](https://github.com/vinnyoodles/algorithms/blob/master/src/array/greatestSubarry.js)
+- [Array: Greatest Subarray](https://github.com/vinnyoodles/algorithms/blob/master/src/array/greatestSubarray.js)
 - [Array: Jumping Array](https://github.com/vinnyoodles/algorithms/blob/master/src/array/jumpingArray.js)
 - [Array: Minimum Additions](https://github.com/vinnyoodles/algorithms/blob/master/src/array/minAdditions.js)
 - [Graph: Largest Neighbor](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/largestNeighbor.js)
