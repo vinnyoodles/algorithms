@@ -1,6 +1,25 @@
 ## Table of Contents
+- [Merge two lists](#merge-two-lists)
 - [Reverse a Linked List](#reverse-a-linked-list)
 - [Sum of Two Linked Lists](#sum-of-two-linked-lists)
+
+## Merge two linked lists
+#### Problem
+Given two sorted linked lists, merge the lists to a single sorted linked list.
+
+#### Input/Output
+```
+Input: 1 -> 3 -> 5
+       2 -> 4 -> 6
+Output: 1 -> 2 -> 3 -> 4 -> 5 -> 6
+```
+
+#### Explanation
+Create a dummy node and iterate through the lists and only add the current smaller node to the end of the dummy node list. Keep traversing the lists, node by node.
+
+*Note*, only traverse the list that is being added. So in the example above, it would first add the node from list A (1). So it should only traverse list A and not list B as well or it would skip the node with the value of 2.
+
+The complexity of this solution is O(n) time and O(1) space. All solutions would have to iterate through both lists at least once so the optimal solution is linear time. For space, it is only creating a single dummy node in the start so it is constant space.
 
 ## Reverse a Linked List
 #### Problem
