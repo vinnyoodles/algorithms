@@ -1,7 +1,26 @@
 ## Table of Contents
+- [Find Intersecting Node](#find-intersection-node)
 - [Merge two lists](#merge-two-lists)
 - [Reverse a Linked List](#reverse-a-linked-list)
 - [Sum of Two Linked Lists](#sum-of-two-linked-lists)
+
+## Find Intersecting Node
+#### Problem
+Given two linked lists, find the intersecting node. An intersecting node is a node that is apparent in both lists. If no node exists, then return null.
+
+#### Input/Output
+```
+Input: 1 -> 3 -> 5
+       10 -> 3 -> 5
+Output: 3
+```
+
+#### Explanation
+There are a few solutions that I can think of. The first solution is naive and runs in O(n * m) time where n is the length of list 1 and m is the length of list 2. The naive solution is compare every node in list 1 with every node in list 2. If there is a match, return the matched node.
+
+The second solution is more optimal because it runs in O(n + m) time and requires O(n) space. This solution uses a hash table to store every node in list 1 where the key is the node itself. Then, iterate through the second list and check if that node already exists in the table. If it does, return the matched node.
+
+An even more optimal solution would run in O(n + m) time and uses constant space. This solution first checks the last nodes of each list. If the last nodes are not identical then there must not be an intersecting node so it can return early. While checking the last nodes of each list, store the length of each list as a variable. For the longer list, remove the first *x* nodes where x represents the difference between the two lists.
 
 ## Merge two linked lists
 #### Problem
