@@ -3,6 +3,7 @@
 - [Minimum Additions](#minimum-additions)
 - [Jumping Array](#jumping-array)
 - [Leader](#leader)
+- [Peak](#peak)
 
 ## Greatest Subarray
 #### Problem
@@ -76,3 +77,18 @@ Output: [27, 54, 98]
 This is a simple backtracking problem. Start from the end of the array and store the current leader as the last value. Then, iterate backwards and for every value that is greater than the current leader, add it to the return array and mark that new value as the current leader. This solution runs in O(n) time and O(1) space.
 
 [Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/array/leader.js)
+
+## Peak
+#### Problem
+Given an array of size n, find a peak element in the array. Peak element is the element which is greater than or equal to its neighbors.
+
+#### Input/Output
+```
+Input: [1, 4, 3, 6, 7, 5]
+Output: 4 or 7
+```
+
+#### Explanation
+A naive solution would be to iterate through the array and perform a `isPeak` check for each element. A more optimal solution would be to use a binary search. It would perform the same check on the middle element, if the middle element is a peak, then return it. If the middle element is less than the left element, then check the left subarray. Otherwise, check the right subarray. This solution would run in O(logn) time.
+
+[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/array/peak.js)

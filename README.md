@@ -10,6 +10,7 @@ This contains my practice and preparation for interview/whiteboarding problems. 
 - [Array: Jumping Array](https://github.com/vinnyoodles/algorithms/blob/master/src/array/jumpingArray.js)
 - [Array: Leader](https://github.com/vinnyoodles/algorithms/blob/master/src/array/leader.js)
 - [Array: Minimum Additions](https://github.com/vinnyoodles/algorithms/blob/master/src/array/minAdditions.js)
+- [Array: Peak](https://github.com/vinnyoodles/algorithms/blob/master/src/array/peak.js)
 - [Graph: Largest Neighbor](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/largestNeighbor.js)
 - [Graph: Path Sum](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/pathSum.js)
 - [Graph: Traverse by the Largest Neighbor](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/gridTraversal.js)
