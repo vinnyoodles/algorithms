@@ -22,6 +22,8 @@ The second solution is more optimal because it runs in O(n + m) time and require
 
 An even more optimal solution would run in O(n + m) time and uses constant space. This solution first checks the last nodes of each list. If the last nodes are not identical then there must not be an intersecting node so it can return early. While checking the last nodes of each list, store the length of each list as a variable. For the longer list, remove the first *x* nodes where x represents the difference between the two lists.
 
+[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/linkedlist/findIntersection.js)
+
 ## Merge two linked lists
 #### Problem
 Given two sorted linked lists, merge the lists to a single sorted linked list.
@@ -39,6 +41,8 @@ Create a dummy node and iterate through the lists and only add the current small
 *Note*, only traverse the list that is being added. So in the example above, it would first add the node from list A (1). So it should only traverse list A and not list B as well or it would skip the node with the value of 2.
 
 The complexity of this solution is O(n) time and O(1) space. All solutions would have to iterate through both lists at least once so the optimal solution is linear time. For space, it is only creating a single dummy node in the start so it is constant space.
+
+[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/linkedlist/mergeLists.js)
 
 ## Reverse a Linked List
 #### Problem

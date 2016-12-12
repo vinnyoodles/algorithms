@@ -1,3 +1,11 @@
+/**
+ * Given two linked lists, find the intersecting node.
+ * An intersecting node is a node that is apparent in both lists.
+ * If no node exists, then return null.
+ *
+ * @param {ListNode} a
+ * @param {ListNode} b
+ */
 function findIntersection(a, b) {
   var temp1 = a;
   var temp2 = b;
