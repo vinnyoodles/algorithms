@@ -59,7 +59,7 @@ ListNode.prototype.findNode = function(searchNode) {
   }
 
   return null;
-}
+};
 
 /**
  * Remove the last node from the list.
@@ -85,6 +85,6 @@ ListNode.prototype.removeLast = function() {
   prevNode.next = null;
   return clone;
 
-}
+};
 
 module.exports = ListNode;
