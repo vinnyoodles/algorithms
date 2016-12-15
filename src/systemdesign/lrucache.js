@@ -47,10 +47,10 @@ LRUCache.prototype.set = function(key, value) {
     return;
   } else if (this._currentSize >= this.size) {
     // Evict the least recently used node (the tail of the list).
-    var node = this._head.removeLast();
+    var tailNode = this._head.removeLast();
     // Remove the key/value pair from the table as well.
     for (var _key in this._nodeTable) {
-      if (this._nodeTable[_key] === node) delete this._nodeTable[_key];
+      if (this._nodeTable[_key] === tailNode) delete this._nodeTable[_key];
     }
     this._currentSize --;
   }
@@ -63,10 +63,10 @@ LRUCache.prototype.set = function(key, value) {
     this._update(node);
   } else {
     // Add the node to the front of the list.
-    var node = new ListNode(value);
-    this._update(node);
+    var newNode = new ListNode(value);
+    this._update(newNode);
     // Add the node to the table under the key.
-    this._nodeTable[key] = node;
+    this._nodeTable[key] = newNode;
   }
   this._currentSize ++;
 };
@@ -87,6 +87,6 @@ LRUCache.prototype._update = function(node) {
   prevNode.next = node.next;
   node.next = this._head;
   this._head = node;
-}
+};
 
 module.exports = LRUCache;
