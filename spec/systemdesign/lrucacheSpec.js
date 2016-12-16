@@ -20,11 +20,15 @@ describe('LRUCache', () => {
 
     it('should update the selected node', () => {
       this.cache.set('key1', 1);
+      expect(this.cache._head.toArray()).toEqual([1]);
       this.cache.set('key2', 2);
+      expect(this.cache._head.toArray()).toEqual([2, 1]);
       this.cache.set('key3', 3);
       expect(this.cache._head.toArray()).toEqual([3, 2, 1]);
       expect(this.cache.get('key3')).toEqual(3);
+      expect(this.cache._head.toArray()).toEqual([3, 2, 1]);
       expect(this.cache.get('key2')).toEqual(2);
+      expect(this.cache._head.toArray()).toEqual([2, 3, 1]);
       expect(this.cache.get('key1')).toEqual(1);
       expect(this.cache._head.toArray()).toEqual([1, 2, 3]);
       expect(this.cache.get('key2')).toEqual(2);

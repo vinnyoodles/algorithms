@@ -1,6 +1,5 @@
 var DoublyListNode = require('../linkedlist/DoublyListNode');
 
-
 function LRUCache(size) {
   // The maximum size of the cache.
   this.size = size;
@@ -93,7 +92,7 @@ LRUCache.prototype._update = function(node) {
 
   var prevNode = node.prev;
 
-  // If the node does not exist in the list, then add as the head.
+  // If the node does not exist in the list, then add as the head (new node).
   if (!prevNode) {
     node.next = this._head;
     this._head.prev = node;
@@ -101,8 +100,17 @@ LRUCache.prototype._update = function(node) {
     return;
   }
 
-  prevNode.next = node.next;
+  // If the node that is being updated is the tail, then we must set a new tail.
+  if (this._tail === node) {
+    prevNode.next = null;
+    this._tail = prevNode;
+  } else {
+    prevNode.next = node.next;
+    node.next.prev = prevNode;
+  }
+  node.prev = null;
   node.next = this._head;
+  this._head.prev = node;
   this._head = node;
 };
 
