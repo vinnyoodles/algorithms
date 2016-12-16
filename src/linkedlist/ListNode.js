@@ -1,6 +1,11 @@
 function ListNode(value) {
-  this.next = null;
-  this.value = value;
+  if (value === undefined || value === null) throw new TypeError('Invalid ListNode value');
+  else if (typeof value === 'number') value = [value];
+
+  this.value = value.shift();
+  while (value.length) {
+    this.next = new ListNode(value);
+  }
 }
 
 /**
