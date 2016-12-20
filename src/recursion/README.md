@@ -2,6 +2,7 @@
 - [Pascal's Triangle](#pascal's-triangle)
 - [Number of Paths in a Matrix](#number-of-paths-in-a-matrix)
 - [Depth of an Array](#depth-of-an-array)
+- [0-1 Knapsack](#0-1-knapsack)
 
 ## Pascal's Triangle
 #### Problem
@@ -83,3 +84,31 @@ The best data structure to use to represent the path is a stack. Start by loopin
 The complexities for this implementation is O(n) for both time and space where n is the number of values in the array.
 
 [Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/recursion/depthFinder.js)
+
+## 0-1 Knapsack
+
+#### Problem
+Given a set of items, each with weight and benefit, determine the items to include in the knapsack so that the total weight is less than or equal to a given weight limit and the total benefit is maximized.
+
+#### Input/Output
+```
+Input: [{
+  weight: 2,
+  benefit: 3
+}, {
+  weight: 2,
+  benefit: 7
+}, {
+  weight: 4,
+  benefit: 2
+}, {
+  weight: 5,
+  benefit: 9
+}]
+Output: [0, 1, 3]
+```
+
+#### Explanation
+The naive solution would be to find every solution. Since there are only two choices for every item, either add it to the knapsack or drop it, so the runtime would be exponential. It would look like a recursive function whose callstack would grow like a binary tree.
+
+[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/recursion/knapsack.js)

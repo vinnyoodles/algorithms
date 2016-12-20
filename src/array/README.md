@@ -4,6 +4,7 @@
 - [Jumping Array](#jumping-array)
 - [Leader](#leader)
 - [Peak](#peak)
+- [Spiral Grid](#spiral-grid)
 
 ## Greatest Subarray
 #### Problem
@@ -92,3 +93,16 @@ Output: 4 or 7
 A naive solution would be to iterate through the array and perform a `isPeak` check for each element. A more optimal solution would be to use a binary search. It would perform the same check on the middle element, if the middle element is a peak, then return it. If the middle element is less than the left element, then check the left subarray. Otherwise, check the right subarray. This solution would run in O(logn) time.
 
 [Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/array/peak.js)
+
+## Spiral grid
+
+#### Problem
+Given a grid (two dimensional array), return an array of its value in spiral order. A spiral order can be represented as a coil that makes up the grid. Starting at the top left corner, the spiral would unwind the grid starting from the outside in.
+
+#### Input
+```
+Input:[1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9]
+Output: [1, 2, 3, 6, 9, 8, 7, 4, 5]
+```
