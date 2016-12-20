@@ -1,4 +1,4 @@
-var ListNode = require('../linkedlist/ListNode');
+var DoublyListNode = require('../linkedlist/DoublyListNode');
 
 function LRUCache(size) {
   // The maximum size of the cache.
@@ -9,6 +9,9 @@ function LRUCache(size) {
 
   // Private list node that represents the start of the list.
   this._head = null;
+
+  // Private list node that represents the end of the list.
+  this._tail = null;
 
   // Private interger that represents the current size of the cache.
   this._currentSize = 0;
@@ -42,16 +45,21 @@ LRUCache.prototype.get = function(key) {
 LRUCache.prototype.set = function(key, value) {
   // If the list is currently empty
   if (!this._head) {
-    this._nodeTable[key] = this._head = new ListNode(value);
+    this._nodeTable[key] = this._tail = this._head = new DoublyListNode(value);
     this._currentSize ++;
     return;
-  } else if (this._currentSize >= this.size) {
+
+  // Only remove the last node if the size is reached and the key is new.
+  } else if (this._currentSize >= this.size && !this._nodeTable[key]) {
     // Evict the least recently used node (the tail of the list).
-    var node = this._head.removeLast();
+    var tailNode = this._tail;
+    tailNode.prev.next = null;
+    this._tail = tailNode.prev;
     // Remove the key/value pair from the table as well.
     for (var _key in this._nodeTable) {
-      if (this._nodeTable[_key] === node) delete this._nodeTable[_key];
+      if (this._nodeTable[_key] === tailNode) delete this._nodeTable[_key];
     }
+
     this._currentSize --;
   }
 
@@ -63,30 +71,47 @@ LRUCache.prototype.set = function(key, value) {
     this._update(node);
   } else {
     // Add the node to the front of the list.
-    var node = new ListNode(value);
-    this._update(node);
+    var newNode = new DoublyListNode(value);
+    this._update(newNode);
     // Add the node to the table under the key.
-    this._nodeTable[key] = node;
+    this._nodeTable[key] = newNode;
+    this._currentSize ++;
   }
-  this._currentSize ++;
 };
 
 LRUCache.prototype._update = function(node) {
   // If the node is the head node, then return.
   if (node === this._head) return;
-
-  var prevNode = this._head.findNode(node);
-
-  // If the node does not exist in the list, then add as the head.
-  if (!prevNode) {
-    node.next = this._head;
+  // If there is only 1 node in the list.
+  else if (this._head === this._tail) {
+    node.next = this._tail;
+    this._tail.prev = node;
     this._head = node;
     return;
   }
 
-  prevNode.next = node.next;
+  var prevNode = node.prev;
+
+  // If the node does not exist in the list, then add as the head (new node).
+  if (!prevNode) {
+    node.next = this._head;
+    this._head.prev = node;
+    this._head = node;
+    return;
+  }
+
+  // If the node that is being updated is the tail, then we must set a new tail.
+  if (this._tail === node) {
+    prevNode.next = null;
+    this._tail = prevNode;
+  } else {
+    prevNode.next = node.next;
+    node.next.prev = prevNode;
+  }
+  node.prev = null;
   node.next = this._head;
+  this._head.prev = node;
   this._head = node;
-}
+};
 
 module.exports = LRUCache;

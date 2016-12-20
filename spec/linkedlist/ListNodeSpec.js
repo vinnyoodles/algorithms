@@ -6,6 +6,11 @@ describe('ListNode', () => {
       var a = new ListNode(1);
       expect(a.value).toEqual(1);
     });
+
+    it('should create an entire list with an array', () => {
+      var head = new ListNode([1, 2, 3, 4, 5]);
+      expect(head.toArray()).toEqual([1, 2, 3, 4, 5]);
+    });
   });
 
   describe('append', () => {
@@ -33,8 +38,9 @@ describe('ListNode', () => {
     it('should work for empty arrays', () => {
       var head = new ListNode(1);
       head.append([]);
+      expect(head.toArray()).toEqual([1]);
       expect(head.value).toEqual(1);
-      expect(head.next).toEqual(null);
+      expect(head.next).toBeFalsy();
     });
 
     it('should return the last node added', () => {
@@ -42,7 +48,7 @@ describe('ListNode', () => {
       var last = head.append([2, 3, 4]);
       expect(head.value).toEqual(1);
       expect(last.value).toEqual(4);
-    })
+    });
   });
 
   describe('toArray', () => {
@@ -70,7 +76,7 @@ describe('ListNode', () => {
       var head = new ListNode(1);
       var second = head.next = new ListNode(2);
       var third = second.next = new ListNode(3);
-      var fourth = third.next = new ListNode(4);
+      third.next = new ListNode(4);
       expect(head.findNode(third)).toEqual(second);
     });
 
@@ -78,7 +84,7 @@ describe('ListNode', () => {
       var head = new ListNode(1);
       var second = head.next = new ListNode(2);
       var third = second.next = new ListNode(3);
-      var fourth = third.next = new ListNode(4);
+      third.next = new ListNode(4);
       var loner = new ListNode(5);
       expect(head.findNode(loner)).toEqual(null);
     });
