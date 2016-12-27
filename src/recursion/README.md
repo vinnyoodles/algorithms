@@ -134,6 +134,8 @@ The combinations for a staircase with 3 steps are:
 3
 ```
 
-The first thought for this solution should be recursion.
+The first thought for this solution should be recursion. Although, recursion alone would overkill as the runtime would be exponential.
 
-[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/recursion/knapsack.js)
+A memoization is a common technique to optimize recursive problems. Memoization would *memorize* or simply cache/store the results in a data structure so it can be reused but not recalculated. The reason why the original recursive implementation runs exponentially is because it recalculates certain operations multiple times. Using a table or dictionary structure, we can store the number of steps to be used later if that same operation arises.
+
+[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/recursion/staircase.js)
