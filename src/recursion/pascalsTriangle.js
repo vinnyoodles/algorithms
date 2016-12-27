@@ -54,4 +54,8 @@ function pascalsTriangleIterative(n) { // jshint ignore:line
   return triangle;
 }
 
-module.exports = pascalsTriangle;
+module.exports = {
+  pascalsTriangle,
+  // For testing.
+  _iterative: pascalsTriangleIterative
+};

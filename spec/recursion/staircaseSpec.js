@@ -1,4 +1,4 @@
-var staircase = require('../../src/recursion/staircase');
+var { staircase, _recursive } = require('../../src/recursion/staircase');
 
 describe('staircase', () => {
   it('should return the number of steps', () => {
@@ -23,5 +23,18 @@ describe('staircase', () => {
 
   it('should return 0 for negatives', () => {
     expect(staircase(-5)).toEqual(0);
+  });
+
+  it('should also work using only recursion', () => {
+    expect(staircase(0)).toEqual(_recursive(0));
+    expect(staircase(1)).toEqual(_recursive(1));
+    expect(staircase(2)).toEqual(_recursive(2));
+    expect(staircase(3)).toEqual(_recursive(3));
+    expect(staircase(4)).toEqual(_recursive(4));
+    expect(staircase(5)).toEqual(_recursive(5));
+    expect(staircase(6)).toEqual(_recursive(6));
+    expect(staircase(7)).toEqual(_recursive(7));
+    expect(staircase(10)).toEqual(_recursive(10));
+    expect(staircase(15)).toEqual(_recursive(15));
   });
 });

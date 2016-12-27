@@ -36,4 +36,10 @@ describe('greatestSubarray', () => {
     var k = 15;
     expect(greatestSubarray(array, k)).toEqual(7);
   });
+
+  it('should test all cases', () => {
+    expect(greatestSubarray([], 1)).toEqual(0);
+    expect(greatestSubarray([5], 1)).toEqual(0);
+    expect(greatestSubarray([5], 5)).toEqual(1);
+  });
 });

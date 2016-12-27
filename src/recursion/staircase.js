@@ -29,4 +29,7 @@ function staircaseMemoize(n, table) {
   }
 }
 
-module.exports = staircase;
+module.exports = {
+  staircase,
+  _recursive: staircaseRecurse
+};
