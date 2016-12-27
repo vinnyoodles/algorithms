@@ -3,6 +3,7 @@
 - [Number of Paths in a Matrix](#number-of-paths-in-a-matrix)
 - [Depth of an Array](#depth-of-an-array)
 - [0-1 Knapsack](#0-1-knapsack)
+- [Staircase](#staircase)
 
 ## Pascal's Triangle
 #### Problem
@@ -110,5 +111,29 @@ Output: [0, 1, 3]
 
 #### Explanation
 The naive solution would be to find every solution. Since there are only two choices for every item, either add it to the knapsack or drop it, so the runtime would be exponential. It would look like a recursive function whose callstack would grow like a binary tree.
+
+[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/recursion/knapsack.js)
+
+## Staircase
+
+#### Problem
+How many combinations would ascending an *n* staircase where *n* is the number of steps and only steps of 1, 2 or 3 can be performed.
+
+#### Input/Output
+```
+Input: 3
+Output: 4
+```
+
+#### Explanation
+The combinations for a staircase with 3 steps are:
+```
+1 + 1 + 1
+1 + 2
+2 + 1
+3
+```
+
+The first thought for this solution should be recursion.
 
 [Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/recursion/knapsack.js)

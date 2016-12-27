@@ -24,10 +24,11 @@ This contains my practice and preparation for interview/whiteboarding problems. 
 - [Linked List: Reverse List](https://github.com/vinnyoodles/algorithms/blob/master/src/linkedlist/reverseList.js)
 - [Linked List: Sum Two Lists](https://github.com/vinnyoodles/algorithms/blob/master/src/linkedlist/sumLists.js)
 
+- [Recursion: 0-1 Knapsack](https://github.com/vinnyoodles/algorithms/blob/master/src/recursion/knapsack.js)
 - [Recursion: Depth of an Array](https://github.com/vinnyoodles/algorithms/blob/master/src/recursion/depthFinder.js)
 - [Recursion: Number of Paths in a Matrix](https://github.com/vinnyoodles/algorithms/blob/master/src/recursion/numberOfPathsInMatrix.js)
-- [Recursion: 0-1 Knapsack](https://github.com/vinnyoodles/algorithms/blob/master/src/recursion/knapsack.js)
 - [Recursion: Pascal's Triangle](https://github.com/vinnyoodles/algorithms/blob/master/src/recursion/pascalsTriangle.js)
+- [Recursion: Staircase](https://github.com/vinnyoodles/algorithms/blob/master/src/recursion/staircase.js)
 
 - [Search: Binary Search](https://github.com/vinnyoodles/algorithms/blob/master/src/search/binarySearch.js)
 
