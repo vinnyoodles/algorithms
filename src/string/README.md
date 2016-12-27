@@ -1,5 +1,6 @@
 ## Table of Contents
 - [Longest Subsequence](#longest-subsequence)
+- [Balanced Parentheses](#balanced-parentheses)
 
 ## Longest Subsequence
 #### Problem
@@ -38,3 +39,22 @@ There's no match for the last character and we're at the end of both strings, so
 In all scenarios, the space complexity is O(1). For runtime, the best case is O(n) where n is the length of the longer string where the shorter string is a full subsequence is the longer string. The worst case runtime is O(n<sup>2</sup>) where both strings are of equal length and only the last character of the first string occurs in the second string causing us to loop through the second string for each character in the first string.
 
 [Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/string/longestSubsequence.js)
+
+## Balanced Parentheses
+#### Problem
+Check if a sequence of different types of brackets (or parentheses) is correctly balanced, return true if it is and false otherwise.
+
+#### Input/Output
+```
+Input: '{}[]()'
+Output: true
+```
+
+#### Explanation
+The key to this problem is to use a stack to keep track of the current opened parentheses.
+
+The determining factor on whether an expression is valid or not is solely based on the closing brackets. So the trick is to iterate through the expression and add all the opened brackets to the stack. While traversing, if a closing bracket is met and it *does not* match the top of the stack, then the expression is invalid. If it does match, then pop the matching opening bracket off the stack and continue on. The expression is only valid *if* the traversal is complete and the stack is empty.
+
+The complexities for this problem is linear and constant for time and space complexity. It runs in linear time because the solution needs to visit each character in the expression. The space is constant because the stack will only have at most half of the expression, if it is valid. The stack may contain the entire expression, *if and only if* the expression consists of only open brackets.
+
+[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/string/balancedParentheses.js)
