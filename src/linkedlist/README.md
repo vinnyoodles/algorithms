@@ -3,6 +3,7 @@
 - [Merge two lists](#merge-two-lists)
 - [Reverse a Linked List](#reverse-a-linked-list)
 - [Sum of Two Linked Lists](#sum-of-two-linked-lists)
+- [Is the List Cyclical](#is-the-list-cyclical)
 
 ## Find Intersecting Node
 #### Problem
@@ -104,3 +105,28 @@ This implementation would run in O(n) time and O(n) space where n is the length 
 The optimal solution would be O(n) time and O(1) space.
 
 [Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/linkedlist/sumLists.js)
+
+## Is the List Cyclical
+
+#### Problem
+
+#### Input/Output
+```
+Input: 1 -> 2 -> 3 -> 4
+                 ^    |
+                 |    |
+                  \__/
+Output: true
+```
+#### Explanation
+There are two possible solutions.
+
+The simpler solution would require the node object to be mutable, so that we can mark it as visited. Basically, iterate through the list and if the node is already visisted then return true. If not, then mark it as visited and continue.
+
+The second solution utilizes the runner method (I just learned that this is also called the tortoise and the hare method :smile:). Basically, have two pointers that traverse the list at different speeds. If the two pointers every collide, besides at the beginning, then the list has a loop.
+
+In both solutions, if there is no next node for any of the nodes in the list, then the list cannot have a loop.
+
+The complexities for both solution are linear runtime and constant space. The first solution is more optimal as it requires only one loop iteration. The second solution solely depends on the length of the loop as well as the pointer speed difference. The worst case would still be linear although a few iterations would be performed.
+
+[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/linkedlist/cylical.js)
