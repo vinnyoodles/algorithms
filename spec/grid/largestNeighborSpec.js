@@ -1,4 +1,4 @@
-var largestNeighbor = require('../../src/graph/largestNeighbor');
+var largestNeighbor = require('../../src/grid/largestNeighbor');
 
 describe('largestNeighbor', () => {
   beforeAll(() => {

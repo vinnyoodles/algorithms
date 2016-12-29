@@ -1,5 +1,5 @@
-var TreeNode = require('../../src/graph/TreeNode');
-var columnSort = require('../../src/graph/columnSort');
+var TreeNode = require('../../src/tree/TreeNode');
+var columnSort = require('../../src/tree/columnSort');
 
 describe('columnSort', () => {
   it('should return an array of the nodes\' value in column sorted order', () => {

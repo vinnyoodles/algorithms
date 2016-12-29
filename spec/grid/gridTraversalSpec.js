@@ -1,4 +1,4 @@
-var gridTraversal = require('../../src/graph/gridTraversal');
+var gridTraversal = require('../../src/grid/gridTraversal');
 
 describe('gridTraversal', () => {
   beforeEach(() => {

@@ -1,48 +1,7 @@
 ## Table of Contents
-- [Largest Neighbor](#largest-neighbor)
-- [Grid Traversal by the Largest Neighbor](#grid-traversal-by-the-largest-neighbor)
 - [Tree Traversal](#tree-traversal)
 - [Sort Tree by Columns](#sort-tree-by-columns)
 - [Path Sum](#path-sum)
-
-## Largest Neighbor
-#### Problem
-Find the neighbor of the current node in a given graph with the greatest value. If no neighbor with a value greater than 0 exists, then return an empty node.
-
-#### Input/Output
-```
-Input: { x: 0, y: 0}, [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9]
-]
-Output: { x: 0, y: 1 }
-```
-#### Explanation
-This problem is pretty simple, its mostly implemented for the [Grid Traversal by the Largest Neighbor](#grid-traversal-by-the-largest-neighbor) problem. Just look at the neighbors of the current node. There would be at most 4 neighbors and at least 2 neighbors.
-
-[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/largestNeighbor.js)
-
-## Grid Traversal by the Largest Neighbor
-#### Problem
-Given a grid and a starting location, traverse the grid by following the largest neighbor. A node's neighbor is confined to only the cardinal directions (north, south, east and west). When traversing, prioritize neighbors with greatest value. The traversal ends when the node no longer has an neighbors with a value greater than 0. Return the path of the traversal.
-
-#### Input/Output
-```
-Input: { x: 0, y: 0}, [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9]
-]
-Output: [1, 4, 7, 8, 9, 6, 5, 2, 3]
-```
-
-#### Explanation
-The solution uses a depth first search with the [Largest Neighbor](#largest-neighbor) as the priority. Starting at the given location, find the largest neighbor and set the current location as visited then move to that neighbor. Continue this traversal until there are no more valid neighbors.
-
-The space and time complexities for this is O(n*m) for both where *n* is the width and *m* is the height.
-
-[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/gridTraversal.js)
 
 ## Tree Traversal
 #### Problem
@@ -69,7 +28,7 @@ An easy way to remember this is to push the current node depending on the name o
 
 All traversals run in O(n) time and space where n is the number of nodes in the tree.
 
-[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/TreeNode.js)
+[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/tree/TreeNode.js)
 
 ## Sort Tree by Columns
 #### Problem
@@ -115,7 +74,7 @@ The only issue now is that the tables do not store the columns in any order so w
 
 The runtime and space complexity would be O(n) where n is the number of nodes in the tree. It is linear for the time complexity because it has to visit each node once when filling the table and a second iteration for the table itself. The space complexity is linear because we have to store the columns in a table as well as the returning array.
 
-[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/columnSort.js)
+[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/tree/columnSort.js)
 
 ## Path Sum
 
@@ -142,4 +101,4 @@ So in the example, it would start at the root node with *k = 9*. When it travers
 
 The time and space complexity is O(n) and O(1) respectively where n is the number of nodes in the tree.
 
-[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/pathSum.js)
+[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/tree/pathSum.js)

@@ -1,5 +1,5 @@
-var TreeNode = require('../../src/graph/TreeNode');
-var pathSum = require('../../src/graph/pathSum');
+var TreeNode = require('../../src/tree/TreeNode');
+var pathSum = require('../../src/tree/pathSum');
 
 describe('pathSum', () => {
   beforeEach(() => {
