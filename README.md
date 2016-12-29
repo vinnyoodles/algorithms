@@ -14,9 +14,9 @@ This contains my practice and preparation for interview/whiteboarding problems. 
 - [Array: Spiral Grid](https://github.com/vinnyoodles/algorithms/blob/master/src/array/spiralGrid.js)
 
 ***
-- [Grid: Largest Neighbor](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/largestNeighbor.js)
-- [Grid: Largest Region](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/largestRegion.js)
-- [Grid: Traverse by the Largest Neighbor](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/gridTraversal.js)
+- [Grid: Largest Neighbor](https://github.com/vinnyoodles/algorithms/blob/master/src/grid/largestNeighbor.js)
+- [Grid: Largest Region](https://github.com/vinnyoodles/algorithms/blob/master/src/grid/largestRegion.js)
+- [Grid: Traverse by the Largest Neighbor](https://github.com/vinnyoodles/algorithms/blob/master/src/grid/gridTraversal.js)
 
 ***
 - [Linked List: Is the List Cyclical](https://github.com/vinnyoodles/algorithms/blob/master/src/linkedlist/cyclical.js)
@@ -46,9 +46,9 @@ This contains my practice and preparation for interview/whiteboarding problems. 
 - [System Design: LRU Cache](https://github.com/vinnyoodles/algorithms/blob/master/src/systemdesign/lrucache.js)
 
 ***
-- [Tree: Path Sum](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/pathSum.js)
-- [Tree: Tree Traversal](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/TreeNode.js)
-- [Tree: Sort Tree by Columns](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/columnSort.js)
+- [Tree: Path Sum](https://github.com/vinnyoodles/algorithms/blob/master/src/tree/pathSum.js)
+- [Tree: Tree Traversal](https://github.com/vinnyoodles/algorithms/blob/master/src/tree/TreeNode.js)
+- [Tree: Sort Tree by Columns](https://github.com/vinnyoodles/algorithms/blob/master/src/tree/columnSort.js)
 
 ***
 - [Trie](https://github.com/vinnyoodles/algorithms/blob/master/src/trie)
