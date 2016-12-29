@@ -15,6 +15,7 @@ This contains my practice and preparation for interview/whiteboarding problems. 
 
 ***
 - [Grid: Largest Neighbor](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/largestNeighbor.js)
+- [Grid: Largest Region](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/largestRegion.js)
 - [Grid: Traverse by the Largest Neighbor](https://github.com/vinnyoodles/algorithms/blob/master/src/graph/gridTraversal.js)
 
 ***

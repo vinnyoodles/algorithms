@@ -1,5 +1,6 @@
 ## Table of Contents
 - [Largest Neighbor](#largest-neighbor)
+- [Largest Region](#largest-region)
 - [Grid Traversal by the Largest Neighbor](#grid-traversal-by-the-largest-neighbor)
 
 ## Largest Neighbor
@@ -40,3 +41,24 @@ The solution uses a depth first search with the [Largest Neighbor](#largest-neig
 The space and time complexities for this is O(n*m) for both where *n* is the width and *m* is the height.
 
 [Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/grid/gridTraversal.js)
+
+## Largest Region
+#### Problem
+Given a grid with 0s and 1s, find the largest region of 1s. A region can be connected horizontally, vertically or diagonally.
+
+#### Input/Output
+```
+Input: [
+  [0,0,0,0,0,0,0],
+  [0,0,0,0,1,0,0],
+  [0,0,0,0,1,0,0],
+  [0,0,0,1,0,0,0],
+  [0,0,0,0,1,1,1]
+]
+Output: 6
+```
+
+#### Explanation
+The optimal solution would be to use either BFS or DFS to count the regions size. It's required to iterate through each value, so linear time is the minimum. To prevent checking duplicates, mark each spot by setting the value to 0.
+
+[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/grid/largestRegion.js)
