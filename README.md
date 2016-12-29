@@ -47,6 +47,9 @@ This contains my practice and preparation for interview/whiteboarding problems. 
 ***
 - [System Design: LRU Cache](https://github.com/vinnyoodles/algorithms/blob/master/src/systemdesign/lrucache.js)
 
+***
+- [Trie](https://github.com/vinnyoodles/algorithms/blob/master/src/trie)
+
 ## Testing
 
 ```javascript
