@@ -30,24 +30,24 @@ This contains my practice and preparation for interview/whiteboarding problems. 
 │   └──ListNode.js
 │   └──DoublyListNode.js
 ├── recursion
-│  └──knapsack.js
-│  └──depthFinder.js
-│  └──numberOfPathsInMatrix.js
-│  └──pascalsTriangle.js
-│  └──staircase.js
+│   └──knapsack.js
+│   └──depthFinder.js
+│   └──numberOfPathsInMatrix.js
+│   └──pascalsTriangle.js
+│   └──staircase.js
 ├── search
-│  └──binarySearch.js
+│   └──binarySearch.js
 ├── sort
-│  └──mergesort.js
+│   └──mergesort.js
 ├── string
-│  └──balancedParenthese.js
-│  └──longestSubsequence.js
+│   └──balancedParenthese.js
+│   └──longestSubsequence.js
 ├── systemdesign
-│  └──lrucache.js
+│   └──lrucache.js
 ├── tree
-│  └──pathSum.js
-│  └──columnSort.js
-│  └──TreeNode.js
+│   └──pathSum.js
+│   └──columnSort.js
+│   └──TreeNode.js
 └── trie
 ```
 
