@@ -42,6 +42,7 @@ This contains my practice and preparation for interview/whiteboarding problems. 
 ├── string
 │   └──balancedParenthese.js
 │   └──longestSubsequence.js
+│   └──kmp.js
 ├── systemdesign
 │   └──lrucache.js
 ├── tree

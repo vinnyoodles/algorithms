@@ -1,6 +1,7 @@
 ## Table of Contents
 - [Longest Subsequence](#longest-subsequence)
 - [Balanced Parentheses](#balanced-parentheses)
+- [Knuth Morris Pratt](#knuth-morris-pratt)
 
 ## Longest Subsequence
 #### Problem
@@ -58,3 +59,22 @@ The determining factor on whether an expression is valid or not is solely based 
 The complexities for this problem is linear and constant for time and space complexity. It runs in linear time because the solution needs to visit each character in the expression. The space is constant because the stack will only have at most half of the expression, if it is valid. The stack may contain the entire expression, *if and only if* the expression consists of only open brackets.
 
 [Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/string/balancedParentheses.js)
+
+## Knuth Morris Pratt
+#### Problem
+Find the index of the target string or the needle in the search string or the haystack using the Knuth Morris Pratt string searching algorithm.
+
+
+#### Input/Output
+```javascript
+Input: 'abc abcdab abcdabcdabde' // Haystack
+       'abcdabd' // Needle
+Output: 2
+```
+
+#### Explanation
+The algorithm utilizes a fail table to map back to the last occurence of the partially matched string. Using the fail table, we can optimize the runtime when searching for a large needle in a large haystack because we would not have to reiterate through the partially matched string.
+
+In the example given, there is a partial match in the haystack at index 12. The last character doesn't match so we have to keep looking, but the partial string `ab` in the needle also occurs near the end of it. We can move the search string straight to index 16 because of this.
+
+[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/string/kmp.js)
