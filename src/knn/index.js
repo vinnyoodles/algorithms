@@ -81,28 +81,28 @@ NodeList.prototype.add = function(node) {
  * @return {Boolean}
  */
 NodeList.prototype.normalizeAxis = function(factors) {
-  var extremas = [];
+  var extremes = [];
   for (var f in factors) {
-    extremas.push({ min: Number.MAX_VALUE, max: 0, label: factors[f] });
+    extremes.push({ min: Number.MAX_VALUE, max: 0, label: factors[f] });
   }
 
-  // Iterate through all the nodes and find the extremas for both axis.
+  // Iterate through all the nodes and find the extremes for both axis.
   for (var i in this.nodes) {
-    for (var e in extremas) {
-      var ex = extremas[e];
+    for (var e in extremes) {
+      var ex = extremes[e];
       if (this.nodes[i][ex.label] < ex.min) ex.min = this.nodes[i][ex.label];
       if (this.nodes[i][ex.label] > ex.max) ex.max = this.nodes[i][ex.label];
     }
   }
 
 
-  var extremasTable = {};
-  for (var x in extremas) {
-    extremas[x].range = extremas[x].max - extremas[x].min;
-    extremasTable[extremas[x].label] = extremas[x];
+  var extremesTable = {};
+  for (var x in extremes) {
+    extremes[x].range = extremes[x].max - extremes[x].min;
+    extremesTable[extremes[x].label] = extremes[x];
   }
 
-  return extremasTable;
+  return extremesTable;
 };
 
 NodeList.prototype.determine = function(factors, type) {

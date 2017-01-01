@@ -19,6 +19,8 @@ This contains my practice and preparation for interview/whiteboarding problems. 
 │   └── largestNeighbor.js
 │   └── largestRegion.js
 │   └── gridTraversal.js
+├── kmeans (kth clustering)
+│   └── index.js
 ├── knn (kth nearest neighbor)
 │   └── index.js
 ├── linkedlist

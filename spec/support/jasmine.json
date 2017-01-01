@@ -3,5 +3,5 @@
   "spec_files": [
     "./**/*[sS]pec.js"
   ],
-  "helpers": []
+  "helpers": ["../node_modules/jasmine-expect/index.js"]
 }
