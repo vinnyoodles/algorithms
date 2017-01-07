@@ -31,6 +31,8 @@ This contains my practice and preparation for interview/whiteboarding problems. 
 │   └──sumLists.js
 │   └──ListNode.js
 │   └──DoublyListNode.js
+├── math
+│   └── randomWeight.js
 ├── recursion
 │   └──knapsack.js
 │   └──depthFinder.js
