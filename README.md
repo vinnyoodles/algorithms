@@ -15,6 +15,8 @@ This contains my practice and preparation for interview/whiteboarding problems. 
 │   ├── minAdditions.js
 │   ├── peak.js
 │   └── spiralGrid.js
+├── genetic algorithms
+│   └── string.js
 ├── grid
 │   └── largestNeighbor.js
 │   └── largestRegion.js
