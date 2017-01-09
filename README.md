@@ -26,35 +26,35 @@ This contains my practice and preparation for interview/whiteboarding problems. 
 ├── knn (kth nearest neighbor)
 │   └── index.js
 ├── linkedlist
-│   └──cyclical.js
-│   └──findIntersection.js
-│   └──mergeLists.js
-│   └──reverseList.js
-│   └──sumLists.js
-│   └──ListNode.js
-│   └──DoublyListNode.js
+│   └── cyclical.js
+│   └── findIntersection.js
+│   └── mergeLists.js
+│   └── reverseList.js
+│   └── sumLists.js
+│   └── ListNode.js
+│   └── DoublyListNode.js
 ├── math
 │   └── randomWeight.js
 ├── recursion
-│   └──knapsack.js
-│   └──depthFinder.js
-│   └──numberOfPathsInMatrix.js
-│   └──pascalsTriangle.js
-│   └──staircase.js
+│   └── knapsack.js
+│   └── depthFinder.js
+│   └── numberOfPathsInMatrix.js
+│   └── pascalsTriangle.js
+│   └── staircase.js
 ├── search
-│   └──binarySearch.js
+│   └── binarySearch.js
 ├── sort
-│   └──mergesort.js
+│   └── mergesort.js
 ├── string
-│   └──balancedParenthese.js
-│   └──longestSubsequence.js
-│   └──kmp.js
+│   └── balancedParenthese.js
+│   └── longestSubsequence.js
+│   └── kmp.js
 ├── systemdesign
-│   └──lrucache.js
+│   └── lrucache.js
 ├── tree
-│   └──pathSum.js
-│   └──columnSort.js
-│   └──TreeNode.js
+│   └── pathSum.js
+│   └── columnSort.js
+│   └── TreeNode.js
 └── trie
 ```
 
