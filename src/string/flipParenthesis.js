@@ -1,21 +1,28 @@
 function flipParen(paren) {
-  var counter = 0;
-  var min = 0;
+  var list = [];
   for (var i = 0; i < paren.length; i ++) {
-    if (paren.charAt(i) == "(") {
-      counter ++;
-    } else {
-      counter --;
-    }
-
-    min = Math.min(counter, min);
+  	if (paren.charAt(i) == '(') {
+  		list.push('(');
+  	} else if (paren.charAt(i) == ')' && list[list.length - 1] == '(') {
+  		list.pop();
+  	} else {
+  		list.push(paren.charAt(i));
+  	}
   }
 
-  min = Math.abs(min);
-  return min + (counter - min);
-  //add -mini "(" at the start of the string
-  //counter -= mini
-  //add counter ")" at the end of the string
+  if (list.length == 0) return 0;
+
+  var open = 0;
+  var close = 0;
+  for (var j = 0; j < list.length; j ++) {
+  	if (list[j] == '(') {
+  		open ++;
+  	} else {
+  		close ++;
+  	}
+  }
+
+  return (open / 2) + (close / 2);
 }
 
 module.exports = flipParen;
