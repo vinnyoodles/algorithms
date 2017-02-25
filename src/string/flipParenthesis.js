@@ -10,19 +10,7 @@ function flipParen(paren) {
   	}
   }
 
-  if (list.length == 0) return 0;
-
-  var open = 0;
-  var close = 0;
-  for (var j = 0; j < list.length; j ++) {
-  	if (list[j] == '(') {
-  		open ++;
-  	} else {
-  		close ++;
-  	}
-  }
-
-  return (open / 2) + (close / 2);
+  return list.length / 2;
 }
 
 module.exports = flipParen;
