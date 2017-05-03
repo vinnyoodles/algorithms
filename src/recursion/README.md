@@ -4,6 +4,7 @@
 - [Depth of an Array](#depth-of-an-array)
 - [0-1 Knapsack](#0-1-knapsack)
 - [Staircase](#staircase)
+- [Permutation of array of arrays](#permutation-of-array-of-arrays)
 
 ## Pascal's Triangle
 #### Problem
@@ -139,3 +140,26 @@ The first thought for this solution should be recursion. Although, recursion alo
 A memoization is a common technique to optimize recursive problems. Memoization would *memorize* or simply cache/store the results in a data structure so it can be reused but not recalculated. The reason why the original recursive implementation runs exponentially is because it recalculates certain operations multiple times. Using a table or dictionary structure, we can store the number of steps to be used later if that same operation arises.
 
 [Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/recursion/staircase.js)
+
+## Permutation of array of arrays
+
+#### Problem
+
+Given an array of arrays, find all possible permutations (in any order).
+
+#### Input/Output
+
+```
+Input: [ [1, 2], [3, 4] ]
+Output: [ [1, 3], [1, 4], [2, 3], [2, 4] ]
+```
+
+#### Explanation
+
+When approaching this problem, think about the naive solution. It turns out that the naive solution is the only solution because the problem is asking for *all* permutations. Therefore, all possibilited much be reached. Therefore, the runtime would be exponential.
+
+This recursion problem can be approached in two ways, both are similar except for the initial approach. This can be done either top down or bottom up. I made my solution using a bottom up approach. What this means is that I work backwards given the parameter.
+
+Using the example, `[ [1, 2], [3, 4] ]`. I start with `[3, 4]` and populate the result array with the possible permutations beginning with *3* and beginning with *4*. Then, I work backwards, adding all possibilities from all arrays.
+
+The top down approach would be identical except the result array would be populated from the front of the array. This may seem easier to program and it might actually be. But, personally, visualizing this problem with a bottom up approach is easier. All in all, both solutions work so whichever is easier to visualize for you should be then you program.

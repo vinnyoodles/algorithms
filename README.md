@@ -40,6 +40,7 @@ This contains my practice and preparation for interview/whiteboarding problems. 
 │   └── depthFinder.js
 │   └── numberOfPathsInMatrix.js
 │   └── pascalsTriangle.js
+│   └── permutations.js
 │   └── staircase.js
 ├── search
 │   └── binarySearch.js
