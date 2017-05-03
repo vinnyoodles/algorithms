@@ -4,13 +4,27 @@ function flipParen(paren) {
   	if (paren.charAt(i) == '(') {
   		list.push('(');
   	} else if (paren.charAt(i) == ')' && list[list.length - 1] == '(') {
-  		list.pop();
-  	} else {
-  		list.push(paren.charAt(i));
-  	}
+      list.pop();
+    } else {
+      list.push(paren.charAt(i));
+    }
   }
 
-  return list.length / 2;
+  if (list.length == 0) return 0;
+
+  // Count the number of open and close left.
+  // The result will be the sum of half of each.
+  var open = 0;
+  var close = 0;
+  for (var j = 0; j < list.length; j ++) {
+    if (list[j] == '(') {
+      open ++;
+    } else {
+      close ++;
+    }
+  }
+
+  return (open / 2) + (close / 2);
 }
 
 module.exports = flipParen;
