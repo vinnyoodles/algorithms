@@ -2,7 +2,7 @@ public class Node <T> {
   public Node <T> next;
   public T element;
 
-  public Node (String key, T t) {
+  public Node (T t) {
     this.element = t;
   }
 }
@@ -14,26 +14,25 @@ public class Node <T> {
  * Output: 1 -> 2 -> 3 -> 4 -> 5 -> 6
  **/
 public Node mergeLinkedList(Node l1, Node l2){
-    Node merge = new Node(-1);
-    Node clone = merge;
+  Node merge = new Node(-1);
+  Node clone = merge;
 
-
-    while(l1 != null || l2 != null) {
+  while (l1 != null || l2 != null) {
     int node1 = l1 == null ? Integer.MAX_VALUE : l1.element;
     int node2 = l2 == null ? Integer.MAX_VALUE : l2.element;
-      if(node1 < node2) {
-         merge.next = l1;
-      } else {
-         merge.next = l2;
-      }
 
-      merge = merge.next;
-      l1 = l1.next;
-      l2 = l2.next;
-
+    if(node1 < node2) {
+      merge.next = l1;
+    } else {
+      merge.next = l2;
     }
 
-    return clone.next;
+    merge = merge.next;
+    l1 = l1.next;
+    l2 = l2.next;
+  }
+
+  return clone.next;
 
 }
 
@@ -44,41 +43,40 @@ public Node mergeLinkedList(Node l1, Node l2){
  * Output: 2 -> 10 -> 8 -> 6 -> 4 -> 12
  */
 public Node reverseSublist(Node node, int start, int finish){
-    Node head = node;
-    Node s;
-    Node f;
-    Node beforeS;
-    Node afterf;
-    int counter = 1;
+  Node head = node;
+  Node s;
+  Node f;
+  Node beforeS;
+  Node afterf;
+  int counter = 1;
 
-    // Find s and f;
-    while(node.next != null){
-       if(counter == start - 1) {
-           // Store s and the node before s for reattaching later
-           s = node.next;
-           beforeS = node;
-        } else if(counter == finish) {
-           f = node;
-           afterF = node.next;
-        }
-        counter ++
-        node = node.next;
+  // Find s and f;
+  while (node.next != null){
+    if (counter == start - 1) {
+      // Store s and the node before s for reattaching later
+      s = node.next;
+      beforeS = node;
+    } else if (counter == finish) {
+      f = node;
+      afterF = node.next;
     }
+    counter ++
+      node = node.next;
+  }
 
-    // Cut off the end from f.
-    f.next = null;
-    s = reverseSublist(s);
+  // Cut off the end from f.
+  f.next = null;
+  s = reverseSublist(s);
 
-    // Add back s from the front.
-    beforeS = s;
+  // Add back s from the front.
+  beforeS = s;
 
-    // Get the tail of s
-    while(s.next != null) s = s.next;
+  // Get the tail of s
+  while (s.next != null) s = s.next;
 
-
-    // Add back f from the rear.
-    s.next = afterF;
-    return head;
+  // Add back f from the rear.
+  s.next = afterF;
+  return head;
 }
 
 /**
@@ -87,18 +85,17 @@ public Node reverseSublist(Node node, int start, int finish){
  * Output: 12 -> 10 -> 8 -> 6 -> 4 -> 2
  */
 public Node reverseSublist(Node node) {
-    Node reverse;
-    Node temp;
+  Node reverse;
+  Node temp;
 
-    // Iterate through node, adding to the *tail* of reverse
-    while (node.next != null) {
-        temp = reverse;
-        reverse = node;
-        reverse.next = temp;
+  // Iterate through node, adding to the *tail* of reverse
+  while (node.next != null) {
+    temp = reverse;
+    reverse = node;
+    reverse.next = temp;
 
+    node = node.next;
+  }
 
-        node = node.next;
-    }
-
-    return reverse;
+  return reverse;
 }
