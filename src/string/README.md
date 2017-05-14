@@ -93,6 +93,7 @@ Output: true
 
 #### Explanation
 The solution should be trivial. There are multiple linear solutions for this problem. The most common one is to compare the first char with the last, the second with the second to last, third with third to last, etc. Another solution relying on the language standard library is to flip the string and compare the original with the reverse.
+
 [Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/string/isPalindrome.js)
 
 ## Longest Palindrome
