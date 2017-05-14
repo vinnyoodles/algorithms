@@ -2,6 +2,8 @@
 - [Longest Subsequence](#longest-subsequence)
 - [Balanced Parentheses](#balanced-parentheses)
 - [Knuth Morris Pratt](#knuth-morris-pratt)
+- [Is Palindrome](#is-palindrome)
+- [Longest Palindrome](#longest-palindrome)
 
 ## Longest Subsequence
 #### Problem
@@ -78,3 +80,36 @@ The algorithm utilizes a fail table to map back to the last occurence of the par
 In the example given, there is a partial match in the haystack at index 12. The last character doesn't match so we have to keep looking, but the partial string `ab` in the needle also occurs near the end of it. We can move the search string straight to index 16 because of this.
 
 [Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/string/kmp.js)
+
+## Is Palindrome
+#### Problem
+Return true if the given string is a palindrome.
+
+#### Input/Output
+```javascript
+Input: 'racecar'
+Output: true
+```
+
+#### Explanation
+The solution should be trivial. There are multiple linear solutions for this problem. The most common one is to compare the first char with the last, the second with the second to last, third with third to last, etc. Another solution relying on the language standard library is to flip the string and compare the original with the reverse.
+[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/string/isPalindrome.js)
+
+## Longest Palindrome
+[Source](https://leetcode.com/problems/longest-palindromic-substring/)
+#### Problem
+Given a string, return the longest valid palindrome in the string.
+
+#### Input/Output
+```javascript
+Input: 'foodracecarapples'
+Output: 'racecar'
+```
+
+#### Explanation
+The solution requires some thought. There are a few ways to do this in quadratic time and no memory, for example the implementation I included. It involves checking if a substring at a certain center location is a palindrome. It performs this check with the center location as every character in the string. There are *n* characters and the check is at most O(n) time, therefore the runtime is O(n^2).
+
+There is an optimal solution running in O(n) time called *Manacher's algorithm*. I will try to implement that solution in the future.
+
+[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/string/longestPalindrome.js)
+

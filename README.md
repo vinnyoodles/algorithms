@@ -48,6 +48,8 @@ This contains my practice and preparation for interview/whiteboarding problems. 
 │   └── mergesort.js
 ├── string
 │   └── balancedParenthese.js
+│   └── isPalindrome.js
+│   └── longestPalindrome.js
 │   └── longestSubsequence.js
 │   └── kmp.js
 ├── systemdesign
