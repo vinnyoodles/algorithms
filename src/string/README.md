@@ -22,7 +22,7 @@ Output: 3
 
 This uses dynamic programing by breaking down one of the strings.
 
-For example, given string A of length n (a1, a2, a3, ..., an) and B of length m (b1, b2, b3, ... bm), we can find all subsequence of A in { b1 }, then { b1, b2 }, up until { b1, b2, ..., bm}. Because we are always adding more characters as the subproblem grows, the longest subsequence is at least the length of the prior subsequence. 
+For example, given string A of length n (a1, a2, a3, ..., an) and B of length m (b1, b2, b3, ... bm), we can find all subsequence of A in `{ b1 }`, then `{ b1, b2 }`, up until `{ b1, b2, ..., bm }`. Because we are always adding more characters as the subproblem grows, the longest subsequence is at least the length of the prior subsequence. 
 
 When adding character by character, we check the current longest subsequence and update it for that subproblem. Continue this until the last subproblem is the entire string. 
 
