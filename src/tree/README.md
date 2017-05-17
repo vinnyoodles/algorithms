@@ -2,6 +2,7 @@
 - [Tree Traversal](#tree-traversal)
 - [Sort Tree by Columns](#sort-tree-by-columns)
 - [Path Sum](#path-sum)
+- [Kill Process](#kill-proccess)
 
 ## Tree Traversal
 #### Problem
@@ -102,3 +103,20 @@ So in the example, it would start at the root node with *k = 9*. When it travers
 The time and space complexity is O(n) and O(1) respectively where n is the number of nodes in the tree.
 
 [Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/tree/pathSum.js)
+
+## Kill Process - 582
+
+#### Problem
+[LeetCode](https://leetcode.com/problems/kill-process)
+
+
+#### Explanation
+This is a graph/tree problem because each process has a distinct parent. The tree can be represented with many types of data structures. I went with an adjacency list which I implemented as a hash table of arrays.
+
+The construction of the tree is simple and should run in O(n) time. Just iterate through the ppids and add the child process to the hash table. If the hash table doesn't contain the parent process yet, then initialize a list for it.
+
+The next part is where we find all related processes. This can be done with either a breadth or depth first search. I went with BFS so I used a queue. Basically, start of with the kill process, find all its children add them to the queue. Then, repeat these steps for each element in the queue starting from the front.
+
+The complexity is O(n) runtime and O(n) space.
+
+[Implementation](https://github.com/vinnyoodles/algorithms/blob/master/src/tree/killProcess.js)
