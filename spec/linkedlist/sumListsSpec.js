@@ -31,4 +31,14 @@ describe('sumLists', () => {
     var c = sumLists(a, b);
     expect(c.toArray()).toEqual([8, 9, 9, 0, 1]);
   });
+
+  it('should work for a much longer lists', () => {
+    var a = new ListNode(1);
+    var b = new ListNode(4);
+    a.append([2, 3]);
+    b.append([5, 6, 7, 8, 9]);
+
+    var c = sumLists(a, b);
+    expect(c.toArray()).toEqual([5, 7, 9, 7, 8, 9]);
+  });
 });
