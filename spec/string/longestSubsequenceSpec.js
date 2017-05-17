@@ -52,5 +52,10 @@ describe('longestSubsequence', () => {
     var string5 = 'zzzzzzabczzzzz';
     var string6 = 'ttttatttttbttttc';
     expect(subsequence(string5, string6)).toEqual(3);
+
+    expect(subsequence('eat', 'sea')).toEqual(2);
+    expect(subsequence('cta', 'cat')).toEqual(2);
+    expect(subsequence('intention', 'intuition')).toEqual(7);
+    expect(subsequence('intention', 'fruition')).toEqual(5);
   });
 });
