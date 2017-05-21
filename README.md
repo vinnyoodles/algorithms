@@ -1,5 +1,5 @@
 ## algorithms
-
+  
 [![Build Status](https://travis-ci.org/vinnyoodles/algorithms.svg?branch=master)](https://travis-ci.org/vinnyoodles/algorithms)
 [![Coverage Status](https://coveralls.io/repos/github/vinnyoodles/algorithms/badge.svg?branch=master)](https://coveralls.io/github/vinnyoodles/algorithms?branch=master)
 
