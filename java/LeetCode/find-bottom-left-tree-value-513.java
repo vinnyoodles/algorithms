@@ -22,31 +22,67 @@ public class Solution {
         int left = root.val;
         int childCount = -1;
         queue.add(root);
-        
+
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
             if (next == 0 && ((current > 1 && current == childCount) || (current == 1 && childCount == 1))) {
                 left = node.val;
             }
             current --;
-            
+
             if (node.left != null) {
                 queue.add(node.left);
                 next ++;
             }
-            
+
             if (node.right != null) {
                 queue.add(node.right);
                 next ++;
             }
-            
+
             if (current == 0) {
                 current = next;
                 childCount = next;
                 next = 0;
             }
         }
-        
+
         return left;
+    }
+}
+
+//Version 2
+/**
+  * uses O(n) space has a time Complexity O(n) using a BFS approach to get every node.
+  */
+public class Solution {
+    public int findBottomLeftValue(TreeNode root) {
+
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        int totalNodes = 1;
+
+        TreeNode res = root;
+        queue.add(root);
+        while(!queue.isEmpty()){
+
+            for(int i = 0; i < totalNodes; i++){
+                TreeNode node = queue.poll();
+                if(node.left != null){
+                    queue.add(node.left);
+
+                }
+                if(node.right != null){
+                    queue.add(node.right);
+
+                }
+                if(i == 0){
+                    res = node;
+                }
+            }
+            totalNodes = queue.size();
+        }
+        return res.val;
+
+
     }
 }
