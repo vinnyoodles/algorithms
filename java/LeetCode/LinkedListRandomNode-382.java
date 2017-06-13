@@ -8,30 +8,30 @@
  */
 public class Solution {
 
-    /** @param head The linked list's head.
-        Note that the head is guaranteed to be not null, so it contains at least one node. */
-    ListNode node = null;
-    public Solution(ListNode head) {
-        this.node = head;
+  /** @param head The linked list's head.
+    Note that the head is guaranteed to be not null, so it contains at least one node. */
+  ListNode node = null;
+  public Solution(ListNode head) {
+    this.node = head;
+
+  }
+
+  /** Returns a random node's value. */
+  public int getRandom() {
+    ListNode head = node;
+    ListNode res = node;
+    int size = 0;
+    while(head != null){
+      size++;
+      head = head.next;
+    }
+    int randomProb = (int)(Math.random() * size);
+    for(int i = 0; i < randomProb; i++){
+      res = res.next;
 
     }
-
-    /** Returns a random node's value. */
-    public int getRandom() {
-        ListNode head = node;
-        ListNode res = node;
-        int size = 0;
-        while(head != null){
-            size++;
-            head = head.next;
-        }
-        int randomProb = (int)(Math.random() * size);
-        for(int i = 0; i < randomProb; i++){
-            res = res.next;
-
-        }
-        return res.val;
-    }
+    return res.val;
+  }
 }
 
 /**

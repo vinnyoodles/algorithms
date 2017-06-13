@@ -12,7 +12,6 @@ public class Solution {
         s ++;
         e = s + 1;
       }
-
     }
     return max;
   }
