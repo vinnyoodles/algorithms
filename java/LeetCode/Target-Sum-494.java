@@ -18,6 +18,6 @@ public class Solution {
 
     int plus = helper(nums, sum, index, curr + nums[index]);
     int minus = helper(nums, sum, index, curr - nums[index]);
-    return plus + mins;
+    return plus + minus;
   }
 }
