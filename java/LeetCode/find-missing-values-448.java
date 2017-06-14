@@ -43,4 +43,24 @@ public class Solution {
 
     return res;
   }
+
+  // Another version of the O(1) space solution
+  public List<Integer> findDisappearedNumbers(int[] nums) {
+    List<Integer> list = new ArrayList<Integer>();
+    int current = 0;
+    int goToIndex = 0;
+
+    for(int i = 0; i < nums.length; i++) {
+      current = Math.abs(nums[i]) - 1;
+      goToIndex = Math.abs(nums[current]);
+      nums[current] = goToIndex * -1;
+    }
+
+    for (int i = 0; i < nums.length; i++) {
+      if (nums[i] > 0) 
+        list.add(i + 1);
+    }
+
+    return list;
+  }
 }
