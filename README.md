@@ -68,6 +68,11 @@ This contains my practice and preparation for interview/whiteboarding problems. 
 npm test
 ```
 
+## Style Guides
+
+Please read and follow the style guides for the respective language.
+- [Javascript](https://github.com/airbnb/javascript)
+- [Java](https://google.github.io/styleguide/javaguide.html)
 
 ## License
 [MIT License](https://github.com/vinnyoodles/algorithms/blob/master/LICENSE)
