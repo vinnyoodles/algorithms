@@ -9,6 +9,7 @@ public class Solution {
     int index = 0;
 
     while (length > 1) {
+      if (index >= length - 1) index = 0;
       ListNode a = lists[index];
       ListNode b = lists[index + 1];
 
@@ -21,13 +22,18 @@ public class Solution {
     return lists[0];
   }
 
-  public ListNode mergeTwoLists(ListNode a1, ListNode b1) {
-    ListNode a = a1;
-    ListNode b = b1;
+  public ListNode mergeTwoLists(ListNode a, ListNode b) {
     ListNode temp = new ListNode(-1);
     ListNode clone = temp;
 
     while (a != null || b != null) {
+      if (a == null) {
+        temp.next = b;
+        return clone.next;
+      } else if (b == null) {
+        temp.next = a;
+        return clone.next;
+      }
       int aVal = a == null ? Integer.MAX_VALUE : a.val;
       int bVal = b == null ? Integer.MAX_VALUE : b.val;
       temp.next = aVal >= bVal ? b : a;
@@ -40,3 +46,4 @@ public class Solution {
     return clone.next;
   }
 }
+
