@@ -6,11 +6,11 @@
  *     TreeNode right;
  *     TreeNode(int x) { val = x; }
  * }
- * Given the root of a binary tree, then value v and depth d, you need to add a row of nodes with value v at the given depth d. 
+ * Given the root of a binary tree, then value v and depth d, you need to add a row of nodes with value v at the given depth d.
  * The root node is at depth 1.
- * The adding rule is: 
- *   given a positive integer depth d, for each NOT null tree nodes N in depth d - 1, create two tree nodes with value v as N's left subtree root and right subtree root. 
- *   And N's original left subtree should be the left subtree of the new left subtree root, its original right subtree should be the right subtree of the new right subtree root. 
+ * The adding rule is:
+ *   given a positive integer depth d, for each NOT null tree nodes N in depth d - 1, create two tree nodes with value v as N's left subtree root and right subtree root.
+ *   And N's original left subtree should be the left subtree of the new left subtree root, its original right subtree should be the right subtree of the new right subtree root.
  *   If depth d is 1 that means there is no depth d-1 at all, then create a tree node with value v as the new root of the whole original tree, and the original tree is the new root's left subtree.
  */
 public class Solution {
@@ -67,4 +67,57 @@ public class Solution {
 
     return root;
   }
+}
+
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+ /**
+  * another approach using BFS using a for loop;
+  * Complexity: O(n) time , and O(n) space
+  */
+public class Solution {
+    public TreeNode addOneRow(TreeNode root, int v, int d) {
+        Queue<TreeNode> node = new LinkedList<TreeNode>();
+        node.add(root);
+        int size = node.size();
+
+        if (d == 1) {
+            TreeNode newRoot = new TreeNode(v);
+            newRoot.left = root;
+            return newRoot;
+        }
+
+        int depth = 1;
+        while (!node.isEmpty()) {
+            for (int i = 0; i < size; i++) {
+                TreeNode temp = node.poll();
+                if (depth  == d - 1) {
+                    TreeNode left = temp.left;
+                    TreeNode right = temp.right;
+                    temp.left = new TreeNode(v);
+                    temp.right = new TreeNode(v);
+                    temp.left.left = left;
+                    temp.right.right = right;
+                }
+                if (temp.left != null) {
+                    node.add(temp.left);
+                }
+                if (temp.right != null) {
+                    node.add(temp.right);
+                }
+
+            }
+            depth++;
+            size = node.size();
+        }
+        return root;
+    }
 }
