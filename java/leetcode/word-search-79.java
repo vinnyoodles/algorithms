@@ -40,7 +40,7 @@ public class Solution {
     // Now try the possible word directions for the next character.
     char next = word[charIndex + 1];
 
-    // left
+    // up
     if (x > 0 && next == board[x - 1][y]) {
       board[x][y] = ' ';
       // Stop if already found
@@ -49,21 +49,21 @@ public class Solution {
       board[x][y] = current;
     }
 
-    // up
+    // left
     if (y > 0 && next == board[x][y - 1]) {
       board[x][y] = ' ';
       if (findWord(board, word, x, y - 1, charIndex + 1)) return true;
       board[x][y] = current;
     }
 
-    // right
+    // down
     if (x < board.length - 1 && next == board[x + 1][y]) {
       board[x][y] = ' ';
       if (findWord(board, word, x + 1, y, charIndex + 1)) return true;
       board[x][y] = current;
     }
 
-    // down
+    // right
     if (y < board[0].length - 1 && next == board[x][y + 1]) {
       board[x][y] = ' ';
       if (findWord(board, word, x, y + 1, charIndex + 1)) return true;
