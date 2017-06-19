@@ -43,35 +43,30 @@ public class Solution {
     // left
     if (x > 0 && next == board[x - 1][y]) {
       board[x][y] = ' ';
-      boolean left = findWord(board, word, x - 1, y, charIndex + 1);
       // Stop if already found
-      if (left) return true;
+      if (findWord(board, word, x - 1, y, charIndex + 1)) return true;
+      // Backtrack by adding back the current word.
       board[x][y] = current;
     }
 
     // up
     if (y > 0 && next == board[x][y - 1]) {
       board[x][y] = ' ';
-      boolean up = findWord(board, word, x, y - 1, charIndex + 1);
-      // Stop if already found
-      if (up) return true;
+      if (findWord(board, word, x, y - 1, charIndex + 1)) return true;
       board[x][y] = current;
     }
 
     // right
     if (x < board.length - 1 && next == board[x + 1][y]) {
       board[x][y] = ' ';
-      boolean right = findWord(board, word, x + 1, y, charIndex + 1);
-      // Stop if already found
-      if (right) return true;
+      if (findWord(board, word, x + 1, y, charIndex + 1)) return true;
       board[x][y] = current;
     }
 
     // down
     if (y < board[0].length - 1 && next == board[x][y + 1]) {
       board[x][y] = ' ';
-      boolean down = findWord(board, word, x, y + 1, charIndex + 1);
-      if (down) return true;
+      if (findWord(board, word, x, y + 1, charIndex + 1)) return true;
       board[x][y] = current;
     }
 
