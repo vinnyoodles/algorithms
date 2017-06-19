@@ -1,4 +1,4 @@
-var leader = require('../../src/array/leader');
+var leader = require('../../javascript/array/leader');
 
 describe('leader', () => {
   it('should return all leaders in the array', () => {

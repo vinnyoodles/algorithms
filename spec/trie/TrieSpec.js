@@ -1,4 +1,4 @@
-var Trie = require('../../src/trie');
+var Trie = require('../../javascript/trie');
 
 describe('trie', () => {
   it('should create a trie structure', () => {

@@ -1,4 +1,4 @@
-var DoublyListNode = require('../../src/linkedlist/DoublyListNode');
+var DoublyListNode = require('../../javascript/linkedlist/DoublyListNode');
 
 describe('DoublyListNode', () => {
   describe('constructor', () => {

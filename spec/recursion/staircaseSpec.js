@@ -1,4 +1,4 @@
-var { staircase, _recursive } = require('../../src/recursion/staircase');
+var { staircase, _recursive } = require('../../javascript/recursion/staircase');
 
 describe('staircase', () => {
   it('should return the number of steps', () => {

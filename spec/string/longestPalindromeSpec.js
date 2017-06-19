@@ -1,4 +1,4 @@
-var longestPalindrome = require('../../src/string/longestPalindrome');
+var longestPalindrome = require('../../javascript/string/longestPalindrome');
 
 describe('longestPalindrome', () => {
   it('should return the longest palindrome', () => {

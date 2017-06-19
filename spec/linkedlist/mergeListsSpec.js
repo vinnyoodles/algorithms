@@ -1,5 +1,5 @@
-var ListNode = require('../../src/linkedlist/ListNode');
-var mergeLists = require('../../src/linkedlist/mergeLists');
+var ListNode = require('../../javascript/linkedlist/ListNode');
+var mergeLists = require('../../javascript/linkedlist/mergeLists');
 
 describe('mergeLists', () => {
   it('should merge lists', () => {

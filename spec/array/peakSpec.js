@@ -1,4 +1,4 @@
-var peak = require('../../src/array/peak');
+var peak = require('../../javascript/array/peak');
 
 describe('peak', () => {
   it('should find a peak element', () => {

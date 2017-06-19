@@ -1,4 +1,4 @@
-var mergesort = require('../../src/sort/mergesort');
+var mergesort = require('../../javascript/sort/mergesort');
 
 describe('mergesort', () => {
   it('should sort an unsorted array', () => {

@@ -1,5 +1,5 @@
-var ListNode = require('../../src/linkedlist/ListNode');
-var reverseList = require('../../src/linkedlist/reverseList');
+var ListNode = require('../../javascript/linkedlist/ListNode');
+var reverseList = require('../../javascript/linkedlist/reverseList');
 
 describe('reverseList', () => {
   it('should reverse a linked list', () => {

@@ -1,4 +1,4 @@
-var greatestSubarray = require('../../src/array/greatestSubarray');
+var greatestSubarray = require('../../javascript/array/greatestSubarray');
 
 describe('greatestSubarray', () => {
   it('should return the greatest subarray whose sum is less than k', () => {

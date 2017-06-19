@@ -1,4 +1,4 @@
-var numberOfPathsInMatrix = require('../../src/recursion/numberOfPathsInMatrix');
+var numberOfPathsInMatrix = require('../../javascript/recursion/numberOfPathsInMatrix');
 
 describe('numberOfPathsInMatrix', () => {
   it('should return the number of paths in the matrix', () => {

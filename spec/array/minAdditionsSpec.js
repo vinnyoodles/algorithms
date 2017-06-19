@@ -1,4 +1,4 @@
-var minAdditions = require('../../src/array/minAdditions');
+var minAdditions = require('../../javascript/array/minAdditions');
 
 describe('minAdditions', () => {
   it('should find the minimum number of operations', () => {

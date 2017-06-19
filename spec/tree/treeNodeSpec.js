@@ -1,4 +1,4 @@
-var TreeNode = require('../../src/tree/TreeNode');
+var TreeNode = require('../../javascript/tree/TreeNode');
 
 describe('TreeNode', () => {
   describe('constructor', () => {

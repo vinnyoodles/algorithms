@@ -1,4 +1,4 @@
-var ListNode = require('../../src/linkedlist/ListNode');
+var ListNode = require('../../javascript/linkedlist/ListNode');
 
 describe('ListNode', () => {
   describe('constructor', () => {

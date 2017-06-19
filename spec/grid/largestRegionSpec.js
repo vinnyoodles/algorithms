@@ -1,4 +1,4 @@
-var largestRegion = require('../../src/grid/largestRegion');
+var largestRegion = require('../../javascript/grid/largestRegion');
 
 describe('largestRegion', () => {
   it('should find the largest region', () => {

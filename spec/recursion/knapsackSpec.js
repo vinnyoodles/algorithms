@@ -1,4 +1,4 @@
-var knapsack = require('../../src/recursion/knapsack');
+var knapsack = require('../../javascript/recursion/knapsack');
 
 describe('knapsack', () => {
   it('should return an array of indexes', () => {

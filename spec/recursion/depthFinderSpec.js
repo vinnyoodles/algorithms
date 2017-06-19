@@ -1,4 +1,4 @@
-var depthFinder = require('../../src/recursion/depthFinder');
+var depthFinder = require('../../javascript/recursion/depthFinder');
 
 describe('depthFinder', () => {
   it('should return the object with each value\'s path', () => {

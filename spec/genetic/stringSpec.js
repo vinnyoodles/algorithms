@@ -1,4 +1,4 @@
-var Population = require('../../src/genetic/string');
+var Population = require('../../javascript/genetic/string');
 
 describe('hello', () => {
   it('should contain "Hello World!"', () => {

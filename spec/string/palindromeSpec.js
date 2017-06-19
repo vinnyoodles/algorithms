@@ -1,4 +1,4 @@
-var isPalindrome = require('../../src/string/palindrome');
+var isPalindrome = require('../../javascript/string/palindrome');
 
 describe('isPalindrome', () => {
   it('should return true for valid palindromes', () => {

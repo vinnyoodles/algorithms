@@ -1,5 +1,5 @@
-var ListNode = require('../../src/linkedlist/ListNode');
-var findIntersection = require('../../src/linkedlist/findIntersection');
+var ListNode = require('../../javascript/linkedlist/ListNode');
+var findIntersection = require('../../javascript/linkedlist/findIntersection');
 
 describe('findIntersection', () => {
   it('should find the intersecting node', () => {

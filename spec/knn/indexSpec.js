@@ -1,4 +1,4 @@
-var knn = require('../../src/knn');
+var knn = require('../../javascript/knn');
 var housing = require('./housing.json');
 var cars = require('./cars.json');
 

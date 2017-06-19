@@ -1,4 +1,4 @@
-var LRUCache = require('../../src/systemdesign/lrucache');
+var LRUCache = require('../../javascript/systemdesign/lrucache');
 
 describe('LRUCache', () => {
   beforeEach(() => {

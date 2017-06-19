@@ -1,4 +1,4 @@
-var { pascalsTriangle, _iterative } = require('../../src/recursion/pascalsTriangle');
+var { pascalsTriangle, _iterative } = require('../../javascript/recursion/pascalsTriangle');
 
 describe('pascalsTriangle', () => {
   it('should return pascal\'s triangle', () => {

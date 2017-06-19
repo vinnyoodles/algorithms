@@ -1,4 +1,4 @@
-var kmeans = require('../../src/kmeans');
+var kmeans = require('../../javascript/kmeans');
 
 describe('kmeans', () => {
   describe('dataset1', () => {

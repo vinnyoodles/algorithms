@@ -1,4 +1,4 @@
-var killProcess = require('../../src/tree/killProcess');
+var killProcess = require('../../javascript/tree/killProcess');
 
 describe('killProcess', () => {
   it('should return a list of all the connected pids', () => {

@@ -1,4 +1,4 @@
-var { kmp, createTable } = require('../../src/string/kmp');
+var { kmp, createTable } = require('../../javascript/string/kmp');
 
 describe('kmp', () => {
   describe('main', () => {

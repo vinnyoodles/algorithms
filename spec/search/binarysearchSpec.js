@@ -1,4 +1,4 @@
-var binarysearch = require('../../src/search/binarysearch');
+var binarysearch = require('../../javascript/search/binarysearch');
 
 describe('binarysearch', () => {
   it('should return the index of the value', () => {

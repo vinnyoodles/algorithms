@@ -1,5 +1,5 @@
-var ListNode = require('../../src/linkedlist/ListNode');
-var sumLists = require('../../src/linkedlist/sumLists');
+var ListNode = require('../../javascript/linkedlist/ListNode');
+var sumLists = require('../../javascript/linkedlist/sumLists');
 
 describe('sumLists', () => {
   it('should sum up two linked lists', () => {

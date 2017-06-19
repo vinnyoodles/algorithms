@@ -1,4 +1,4 @@
-var randomWeight = require('../../src/math/randomWeight');
+var randomWeight = require('../../javascript/math/randomWeight');
 
 describe('randomWeight', () => {
   it('should work', () => {

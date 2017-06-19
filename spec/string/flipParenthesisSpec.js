@@ -1,4 +1,4 @@
-var flip = require('../../src/string/flipParenthesis');
+var flip = require('../../javascript/string/flipParenthesis');
 
 
 describe('flip parenthesis', () => {

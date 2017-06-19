@@ -1,4 +1,4 @@
-var jumpingArray = require('../../src/array/jumpingArray');
+var jumpingArray = require('../../javascript/array/jumpingArray');
 
 describe('jumpingArray', () => {
   it('should return true if the array has a path', () => {

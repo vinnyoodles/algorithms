@@ -1,5 +1,5 @@
-var ListNode = require('../../src/linkedlist/ListNode');
-var cyclical = require('../../src/linkedlist/cyclical');
+var ListNode = require('../../javascript/linkedlist/ListNode');
+var cyclical = require('../../javascript/linkedlist/cyclical');
 
 describe('cyclical', () => {
   it('should return false for normal lists', () => {

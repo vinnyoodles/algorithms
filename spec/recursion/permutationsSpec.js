@@ -1,4 +1,4 @@
-var permutations = require('../../src/recursion/permutations');
+var permutations = require('../../javascript/recursion/permutations');
 
 describe('permutations', () => {
     it('should return all permutations of arrays', () => {

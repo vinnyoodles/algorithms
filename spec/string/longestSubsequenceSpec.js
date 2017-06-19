@@ -1,4 +1,4 @@
-var subsequence = require('../../src/string/longestSubsequence');
+var subsequence = require('../../javascript/string/longestSubsequence');
 
 describe('longestSubsequence', () => {
   it('should return the length of the longest subsequence of two strings', () => {

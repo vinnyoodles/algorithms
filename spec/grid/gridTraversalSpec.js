@@ -1,4 +1,4 @@
-var gridTraversal = require('../../src/grid/gridTraversal');
+var gridTraversal = require('../../javascript/grid/gridTraversal');
 
 describe('gridTraversal', () => {
   beforeEach(() => {

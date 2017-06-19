@@ -1,4 +1,4 @@
-var spiralGrid = require('../../src/array/spiralGrid');
+var spiralGrid = require('../../javascript/array/spiralGrid');
 
 describe('spiralGrid', () => {
   it('should return an array', () => {

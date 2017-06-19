@@ -1,4 +1,4 @@
-var balanced = require('../../src/string/balancedParentheses');
+var balanced = require('../../javascript/string/balancedParentheses');
 
 describe('balancedParentheses', () => {
   it('should return true for a valid expression', () => {
