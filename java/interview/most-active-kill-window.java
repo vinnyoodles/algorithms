@@ -7,5 +7,7 @@
  *
  * The return format should be a list of all the windows with the most number of kills in the format of an array.
  * [ timestamp, number of kills ]
+ *
+ * Note: the list of kills are not in any specific order.
  */
 public int[][] mostActiveKillWindow(int[][] kills) { }
