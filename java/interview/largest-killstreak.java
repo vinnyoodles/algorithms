@@ -9,6 +9,17 @@
  * The return format should be a list of all the users with the largest killstreak in the format of an array.
  * [ killerId, number of kills ]
  *
+ * Problem Ex.
+ *   Input: [
+ *     [ 1, 1, 2 ],
+ *     [ 5, 1, 3 ],
+ *     [ 3, 1, 4 ],
+ *     [ 9, 2, 1 ],
+ *   ]
+ *   Output: [ 
+ *     [ 1, 3 ] 
+ *   ]
+ *
  * Note: the list of kills are not in any specific order.
  */
 public int[][] largestKillstreak(int[][] kills) { }
