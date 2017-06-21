@@ -11,7 +11,7 @@
  * 
  * Input: S = "2-4A0r7-4k", K = 4
  * Output: "24A0-R74K" 
- * Complexity: time is O(n), space is O(n)
+ * Complexity: O(N) for time and space.
  */
 public class Solution {
   public String licenseKeyFormatting(String S, int K) {
@@ -39,5 +39,25 @@ public class Solution {
     }
 
     return res.toString().toUpperCase();
+  }
+
+  // Another implementation running in O(N) time and constant space (besides the string builder).
+  public String licenseKeyFormatting(String str, int K) {
+    int counter = 0;
+    StringBuilder b = new StringBuilder();
+
+    for (int i = str.length() - 1; i >= 0; i--) {
+      char c = str.charAt(i);
+      if (c == '-') continue; 
+
+      if (counter == K) {
+        b.append('-');
+        counter = 0;
+      } 
+      b.append(c);
+      counter ++;
+    }
+
+    return b.reverse().toString().toUpperCase();
   }
 }
