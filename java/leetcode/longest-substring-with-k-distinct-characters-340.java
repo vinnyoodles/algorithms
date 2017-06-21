@@ -26,7 +26,7 @@ public class Solution {
 
         // Keep moving the beginning pointer until a character frequency is 0
         while (i < j && map.get(s.charAt(i)) != null && map.get(s.charAt(i)) - 1 > 0) {
-          map.put(s.charAt(i), map.get(s.charAt(i++) - 1));
+          map.put(s.charAt(i), map.get(s.charAt(i++)) - 1);
         }
 
         // Remove the last character.
