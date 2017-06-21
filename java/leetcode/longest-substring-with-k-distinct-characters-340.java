@@ -19,11 +19,9 @@ public class Solution {
     while (i < j && j < s.length() - 1) {
       char next = s.charAt(j + 1);
       // The number of distinct character is equal to K so we must remove the first distinct characters from the front.
-      // Also update the max length.
       if (distinct > k) {
         char start = s.charAt(i);
         while (i < s.length() && start == s.charAt(i)) { 
-          // System.out.println("moving i: " + i);
           i ++;
           map.put(start, Math.max(0, map.containsKey(start) ? map.get(start) - 1 : 0));
         }
