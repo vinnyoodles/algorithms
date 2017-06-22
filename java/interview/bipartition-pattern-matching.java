@@ -13,7 +13,7 @@
  *
  * Note: use may assume the pattern string will only contain lowercase alphabet letters.
  */
-public boolean wordPattern(String pattern, String str) {
+public boolean wordPattern(String str, String pattern) {
   // map each letter to a string.
   String[] strs = str.split("\\s");
   // character -> string mapping
