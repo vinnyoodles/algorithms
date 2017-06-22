@@ -24,5 +24,28 @@
  *
  * Note: there are n - k + 1 subarrays in an array of length n of size k.
  */
-public int[] largestSubarray(int[] arr, int k) { }
+public static int[] largestSubarray(int[] arr, int k) {
+  int numOfSub = arr.length - k + 1;
+  int[][] subarrays = new int[numOfSub][k];
+  int maxIndex = 0;
 
+  for (int i = 0; i < numOfSub; i ++) {
+    boolean updated = false;
+    for (int j = 0; j < k; j ++) {
+      subarrays[i][j] = arr[i + j];
+
+      // If the current subarray is the max subarray, then just populate.
+      // Also, if the max subarray has already been updated then, just populate.
+      // Also, continue if the two values are equal.
+      if (i == maxIndex || updated || subarrays[i][j] == subarrays[maxIndex][j]) continue;
+
+      // New max sub array
+      if (subarrays[i][j] > subarrays[maxIndex][j]) maxIndex = i;
+
+      // Set update to true regardless of which is greater.
+      updated = true;
+    }
+  }
+
+  return subarrays[maxIndex];
+}
