@@ -45,7 +45,7 @@ public int[] numOfLargerStrings(String[] a, String[] b) {
 }
 
 /**
- * Helper function to cound the lexicographical value of the string.
+ * Helper function to count the lexicographical value of the string.
  */
 public int lexicographicalValue(String str) {
   char[] arr = str.toCharArray();
