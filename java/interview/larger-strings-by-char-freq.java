@@ -18,4 +18,43 @@
  *   'abc' has a value of 1 which is greater than nothing in array A
  *   'aaaaaaa' has a value of 7 which is greater than 'abc', 'aab', 'aaa'
  */
-public int[] numOfLargerStrings(String[] a, String[] b) { }
+public int[] numOfLargerStrings(String[] a, String[] b) { 
+  String[] aStrs = a.split("\\s");
+  String[] bStrs = b.split("\\s");
+  int[] values = new int[aStrs.length];
+  int[] result = new int[bStrs.length];
+  int i = 0;
+
+  // Count the frequency value for each string.
+  while (i < aStrs.length || i < bStrs.length) {
+    if (i < aStrs.length) values[i] = lexicographicalValue(aStrs[i]);
+    if (i < bStrs.length) result[i] = lexicographicalValue(bStrs[i]);
+    i ++;
+  }
+
+  // Count the number of strings in a that are less than the string in b.
+  for (int j = 0; j < bStrs.length; j ++) {
+    int count = 0;
+    for (int k = 0; k < aStrs.length; k ++) {
+      if (aStrs[k] < bStrs[j]) count++;
+    }
+    result[i] = count;
+  }
+
+  return result;
+}
+
+/**
+ * Helper function to count the lexicographical value of the string.
+ */
+public int lexicographicalValue(String str) {
+  char[] arr = str.toCharArray();
+  Arrays.sort(arr);
+  int count = 0;
+  for (char c : arr) {
+    if (c == arr[0]) count ++;
+    else break;
+  }
+
+  return count;
+}
