@@ -21,7 +21,7 @@ public class Solution {
       if (count == 0) distinct ++;
 
       // The number of distinct character is equal to K so we must remove a distinct character and all of its occurences.
-      // The distinct chararcter that is removed is dependent on whichever reaches a frequence of 0 first.
+      // The distinct chararcter that is removed is dependent on whichever reaches a frequency of 0 first.
       if (distinct > k) {
         char start = s.charAt(i);
 
