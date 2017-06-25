@@ -20,7 +20,8 @@ public class Solution {
       map.put(next, count + 1);
       if (count == 0) distinct ++;
 
-      // The number of distinct character is equal to K so we must remove the a distinct character and all of its occurences.
+      // The number of distinct character is equal to K so we must remove a distinct character and all of its occurences.
+      // The distinct chararcter that is removed is dependent on whichever reaches a frequence of 0 first.
       if (distinct > k) {
         char start = s.charAt(i);
 
