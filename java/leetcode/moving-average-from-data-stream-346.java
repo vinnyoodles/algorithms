@@ -13,28 +13,30 @@
  * Complexity: O(1) time, space O(n) where is the given size of the array.
  */
 public class MovingAverage {
-    /** Initialize your data structure here. */
-    int[] arr;
-    int index;
-    double res;
-    int start;
-    public MovingAverage(int size) {
-        arr = new int[size];
-        index = 0;
-        res = 0;
-        start = 0;
+  /** Initialize your data structure here. */
+  int[] arr;
+  int index;
+  double res;
+  int start;
+
+  public MovingAverage(int size) {
+    arr = new int[size];
+    index = 0;
+    res = 0;
+    start = 0;
+  }
+
+  public double next(int val) {
+    // keep a constant size to divide once we reach length - 1
+    if (start < arr.length) {
+      start++;
     }
-    public double next(int val) {
-        //  keep a constant size to divide once we reach length - 1
-        if (start < arr.length) {
-            start++;
-        }
-        res -= arr[index];
-        res += val;
-        arr[index] = val;
-        index = (index + 1) % arr.length;
-        return res / start;
-    }
+    res -= arr[index];
+    res += val;
+    arr[index] = val;
+    index = (index + 1) % arr.length;
+    return res / start;
+  }
 }
 /**
  * Your MovingAverage object will be instantiated and called as such:
