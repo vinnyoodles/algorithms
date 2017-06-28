@@ -4,7 +4,7 @@
 - [Definitions](#definitions)
 - [Tips + Tricks](#tips--tricks)
 
-#### Definitions
+### Definitions
 
 **Set**
 > A list of elements in any order. In general, sets are distinguished by the elements in them and not the specific ordering so sets with the same elements but a different ordering are considered duplicates. An empty set is considered to be a `null set` containing only the `null` element.
@@ -63,4 +63,4 @@ Ex. `[ 1, 2, 3, 4, 5 ]` => `[ 2, 3, 4 ]`
 Ex. `[ 1, 2, 3, 4, 5 ]` => `[ 2, 4 ]`
 
 
-#### Tips + Tricks
+### Tips + Tricks
