@@ -4,7 +4,7 @@
  */
 public List<List<Integer>> subsets(int[] nums) {
   List<List<Integer>> list = new ArrayList<List<Integer>>();
-  helper(nums, index, list, new ArrayList<Integer>());
+  helper(nums, 0, list, new ArrayList<Integer>());
   return list;
 }
 
