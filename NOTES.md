@@ -64,3 +64,21 @@ Ex. `[ 1, 2, 3, 4, 5 ] => [ 2, 4 ]`
 
 
 ### Tips + Tricks
+
+- For problems regarding counting the frequency of elements, a hashmap/hashtable is useful because it allows a 1 to 1 mapping. 
+The mapping can be either frequency to element or element to frequency.
+- For problems regarding depth of a tree, BFS is usually the go to algorithm for traversal.
+This is because will iterate the depths in increasing order. Here's an example/skeleton for implementing BFS
+on a binary tree.
+```java
+while (!queue.isEmpty()) {
+  int numberOfNodesInDepth = queue.size();
+  for (int i = 0; i < numberOfNodesInDepth; i ++) {
+    // Poll the next node.
+    // Add all the relevant child nodes (these children are guaranteed to be on the next depth).
+  }
+  // When the above loop ends, we are guaranteed that we have reached the end of a depth level.
+}
+```
+
+
