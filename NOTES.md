@@ -22,14 +22,14 @@ Ex. `[ 1, 2, 3, 4, 5 ] => [ 2, 4 ]`
 
 **Permutations**
 > Given a set `a` of elements, a permutation of `a` would be a unique ordering of the elements in `a`. 
-Because the ordering matters for this, the length of a permutation is always equal to the length of the original set.
-For a set with `N` elements, there are exactly N! permutations. This is because when choosing the first value, there are N elements to choose from, the second value has N - 1, the third has N - 2, and so on.
+Because the ordering matters for this, the length of a **permutation is always equal to the length of the original set**.
+For a set with `N` elements, there are exactly `N!` permutations. This is because when choosing the first value, there are N elements to choose from, the second value has N - 1, the third has N - 2, and so on.
 
 Ex. `[ 1, 2, 3, 4, 5 ] => [ 1, 3, 5, 2, 4 ]`
 
 **Combinations**
 > Given a set `a` of elements, a combination of length `k` would be a valid subset of `a` of length `k`.
-For a set with `N` elements, there are exactly N! / (N - k)! (k)! combinations commonly known as N choose k.
+For a set with `N` elements, there are exactly **N! / (N - k)! (k)!** combinations commonly known as N choose k.
 
 Ex. `[ 1, 2, 3, 4, 5 ] => [ 2, 3, 4 ]` where k = 3
 
@@ -43,7 +43,7 @@ Ex. `[ 1, 2, 3, 4, 5 ] => [ 4, 2, 3 ]` (non continuous subarray)
 Ex. `[ 1, 2, 3, 4, 5 ] => [ 2, 3, 4 ]` (continuous subarray)
 
 **Substring**
-> A substring is a continuous subset of characters of the given string
+> A substring is a **continuous subset** of characters of the given string
 
 Ex. `foobar => foo`
 
@@ -52,7 +52,7 @@ Ex. `foobar => bar`
 Ex. `foobar => ooba`
 
 **Subsequence**
-> A subsequence of a set of elements is a non continuous subset where the original ordering must be maintained.
+> A subsequence of a set of elements is a **non continuous subset** where the original ordering must be maintained.
 
 Ex. `foobar => foo`
 
