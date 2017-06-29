@@ -15,34 +15,34 @@ public class Solution {
     Stack<String> str = new Stack<String>();
     int index = 0;
     String res = "";
-    while ( index < s.length()) {
-        char c = s.charAt(index);
-        if (Character.isDigit(c)) {
-            int start = index;
-            while (Character.isDigit(c)) {
-                index++;
-                c = s.charAt(index);
-            }
-            int val = Integer.parseInt(s.substring(start, index));
-            repeatValue.push(val);
-            c = s.charAt(index);
+    while (index < s.length()) {
+      char c = s.charAt(index);
+      if (Character.isDigit(c)) {
+        int start = index;
+        while (Character.isDigit(c)) {
+          index++;
+          c = s.charAt(index);
         }
-        if (c == '[') {
-            // want to push our string we made
-            str.push(res);
-            res = "";
-        } else if (c == ']') {
-            int repeat = repeatValue.pop();
-            // get our resultString
-            StringBuilder b = new StringBuilder(str.pop());
-            for (int i = 0; i < repeat; i++) {
-                b.append(res);
-            }
-            res = b.toString();
-        } else {
-            res += c;
+        int val = Integer.parseInt(s.substring(start, index));
+        repeatValue.push(val);
+        c = s.charAt(index);
+      }
+      if (c == '[') {
+        // want to push our string we made
+        str.push(res);
+        res = "";
+      } else if (c == ']') {
+        int repeat = repeatValue.pop();
+        // get our resultString
+        StringBuilder b = new StringBuilder(str.pop());
+        for (int i = 0; i < repeat; i++) {
+          b.append(res);
         }
-        index++;
+        res = b.toString();
+      } else {
+        res += c;
+      }
+      index++;
     }
     return res;
   }
