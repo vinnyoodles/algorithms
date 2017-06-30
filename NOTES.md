@@ -65,8 +65,13 @@ Ex. `[ 1, 2, 3, 4, 5 ] => [ 2, 4 ]`
 
 ### Tips + Tricks
 
+#### HashMap/HashTable
+
 - For problems regarding counting the frequency of elements, a hashmap/hashtable is useful because it allows a 1 to 1 mapping. 
 The mapping can be either frequency to element or element to frequency.
+
+#### Tree
+
 - For problems regarding depth of a tree, BFS is usually the go to algorithm for traversal.
 This is because will iterate the depths in increasing order. Here's an example/skeleton for implementing BFS
 on a binary tree.
@@ -81,4 +86,6 @@ while (!queue.isEmpty()) {
 }
 ```
 
-
+#### Array
+- When the brute force solution requires nested for loops such that the runtime becomes a polynomial, try to apply the two, three or n pointers to the problem to reduce the complexity.
+For example, the common 2 sum problem has a brute force of N^2 where you find all possible pairs, however if the array is sorted and pairs are found using two pointers then the runtime can be reduced to N * logN.
