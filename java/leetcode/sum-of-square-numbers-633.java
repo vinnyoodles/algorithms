@@ -8,18 +8,20 @@
  public class Solution {
   public boolean judgeSquareSum(int c) {
     if  (c <= 1) {
-        return true;
+      return true;
     }
+
     Set<Integer> set = new HashSet<>();
     for (int a = 0; a < (int) Math.sqrt(c) + 1; a++) {
-        int b = c - (a*a); // b^2 val;
+        int b = c - (a * a); // b^2 val;
         set.add(b);
     }
+
     // checking if the b^2 exits.
     for (int b = 0; b < (int) Math.sqrt(c) + 1; b++) {
-        if (set.contains((b*b))) {
-            return true;
-        }
+      if (set.contains(b * b)) {
+        return true;
+      }
     }
     return false;
   }

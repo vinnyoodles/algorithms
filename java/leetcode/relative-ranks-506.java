@@ -10,26 +10,26 @@
  * Complexity : O(N) time , O(N) space
  */
  public class Solution {
-   public String[] findRelativeRanks(int[] nums) {
-     String[] res = new String[nums.length];
-     Integer[] ranking = new Integer[nums.length];
-     for (int i = 0; i < nums.length; i++) {
-       ranking[i] = i;
-     }
-     Arrays.sort(ranking, (a, b) -> (nums[b] - nums[a]));
+  public String[] findRelativeRanks(int[] nums) {
+    String[] res = new String[nums.length];
+    Integer[] ranking = new Integer[nums.length];
+    for (int i = 0; i < nums.length; i++) {
+      ranking[i] = i;
+    }
+    Arrays.sort(ranking, (a, b) -> (nums[b] - nums[a]));
 
-     for (int i = 0; i < ranking.length; i++) {
-         // check the rankings and give the top there medals
-       if (i == 0) {
-          res[ranking[i]] = "Gold Medal";
-       } else if ( i == 1) {
-          res[ranking[i]] = "Silver Medal";
-       } else if ( i == 2) {
-          res[ranking[i]] = "Bronze Medal";
-       } else {
-          res[ranking[i]] = (i + 1) + "";
-       }
-     }
-     return res;
-   }
- }
+    for (int i = 0; i < ranking.length; i++) {
+      // check the rankings and give the top there medals.
+      if (i == 0) {
+        res[ranking[i]] = "Gold Medal";
+      } else if (i == 1) {
+        res[ranking[i]] = "Silver Medal";
+      } else if (i == 2) {
+        res[ranking[i]] = "Bronze Medal";
+      } else {
+        res[ranking[i]] = (i + 1) + ""; // Convert int to string.
+      }
+    }
+    return res;
+  }
+}

@@ -17,10 +17,10 @@ public class Solution {
       int k = nums.length - 1;
       while (j < k) {
         if (nums[j] + nums[k] >= sum) {
-            k--;
+          k--;
         } else {
-            result += k - j;
-            j++;
+          result += k - j;
+          j++;
         }
       }
     }
