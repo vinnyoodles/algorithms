@@ -28,4 +28,27 @@
  *
  * Note: the timestamps are given in chronological order.
  */
-public int largestGoldSwing(int[][] timestamps) { }
+public static int largestGoldSwing(int[][] timestamps) {
+  if (timestamps.length == 0) return -1;
+  int len = timestamps.length;
+  int max = Integer.MIN_VALUE;
+
+  /**
+   * This solution runs in N^2 time because we have to calculate the rate from 0 up to the current time.
+   */
+  for (int i = 1; i < len; i ++) {
+    int timestamp = timestamps[i][0];
+    int val1 = timestamps[i][1];
+    int val2 = timestamps[i][2];
+    for (int j = 0; j < i; j ++) {
+      int before1 = timestamps[j][1];
+      int before2 = timestamps[j][2];
+      int diff = i - j;
+      int rate1 = (val1 - before1) / diff;
+      int rate2 = (val2 - before2) / diff;
+      max = Math.max(max, Math.abs(rate1 - rate2));
+    }
+  }
+
+  return max;
+}
