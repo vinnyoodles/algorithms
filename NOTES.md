@@ -88,4 +88,4 @@ while (!queue.isEmpty()) {
 
 #### Array
 - When the brute force solution requires nested for loops such that the runtime becomes a polynomial, try to apply the two, three or n pointers to the problem to reduce the complexity.
-For example, the common 2 sum problem has a brute force of N^2 where you find all possible pairs, however if the array is sorted and pairs are found using two pointers then the runtime can be reduced to N * logN.
+For example, the common 2 sum problem has a brute force of N^2 where you find all possible pairs, however if the array is already sorted and pairs are found using two pointers then the runtime can be reduced to O(N)
