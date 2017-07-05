@@ -14,10 +14,10 @@
  *   [ i, j, k, l ],
  * ]
  * From house a, the next possible houses are either e or f.
- * From house b, the next possibles houses are e, f or g.
- * From house c, the next possibles houses are f, g or h.
- * From house d, the next possibles houses are g or h.
- * From house g, the next possibles houses are i, k or l.
+ * From house b, the next possible houses are e, f or g.
+ * From house c, the next possible houses are f, g or h.
+ * From house d, the next possible houses are g or h.
+ * From house g, the next possible houses are j, k or l.
  *
  * Once you have reached the last row of houses, then you're done and head home.
  *
