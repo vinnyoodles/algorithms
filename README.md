@@ -63,9 +63,10 @@ This contains my practice and preparation for interview/whiteboarding problems. 
 │  │  └── killProcess.js
 │  └─ trie
 └─ java
-   ├─ leetcode
    ├─ epi (elements of programming interview)
-   └─ programmingteam
+   ├─ interview (problems we have personally encountered in interviews)
+   ├─ leetcode
+   └─ programmingteam (problems from our ACM chapter team)
 ```
 
 ## Testing
