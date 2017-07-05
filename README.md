@@ -64,8 +64,9 @@ This contains my practice and preparation for interview/whiteboarding problems. 
 │  └─ trie
 └─ java
    ├─ epi (elements of programming interview)
-   ├─ interview (problems we have personally encountered in interviews)
+   ├─ interview
    ├─ leetcode
+   ├─ misc
    └─ programmingteam (problems from our ACM chapter team)
 ```
 
