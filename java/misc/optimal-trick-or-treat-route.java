@@ -94,3 +94,47 @@ private int maxCandy(int[] lastRow) {
   }
   return max;
 }
+
+/**
+ * Another implementation, similar to above but with O(1) space requirement.
+ */
+public int optimalRoute(int[][] houses) {
+  int rows = houses.length;
+  if (rows == 0) {
+    return 0;
+  }
+  if (rows == 1) {
+    return maxCandy(houses[0]);
+  }
+  int cols = houses[0].length;
+  // Use the first two rows as the dp arrays.
+  helper(houses, houses[0], houses[1], rows, cols);
+  // Find the max value in the dp array.
+  return maxCandy(houses[0]);
+}
+
+/**
+ * We need two dp arrays because we need to now the data while still looking at prior data.
+ */
+private void helper(int[][] houses, int[] dp, int[] dp2, int rows, int cols) {
+  for (int i = 1; i < rows; i++) {
+    for (int j = 0; j < cols; j++) {
+      // Always add the direct descendent.
+      int max = dp[j];
+      if (j > 0) {
+        // Check the left descendent.
+        max = Math.max(max, dp[j - 1]);
+      }
+      if (j < cols - 1) {
+        // Check the right descendent.
+        max = Math.max(max, dp[j + 1]);
+      }
+      dp2[j] = max + houses[i][j];
+    }
+
+    // Update the dp array.
+    for (int k = 0; k < cols; k ++) {
+      dp[k] = dp2[k];
+    }
+  }
+}
