@@ -22,27 +22,26 @@ public class Solution {
     while (rowStart <= rowEnd && colStart <= colEnd) {
       //left to right
       for (int i = colStart; i <= colEnd; i++) {
-          System.out.println(matrix[rowStart][i]);
-          list.add(matrix[rowStart][i]);
+        list.add(matrix[rowStart][i]);
       }
       rowStart++;
       //right to down
       for (int i = rowStart; i <= rowEnd; i++) {
-          list.add(matrix[i][colEnd]);
+        list.add(matrix[i][colEnd]);
       }
       colEnd--;
       //right to left
       if (rowStart <= rowEnd) {
-          for (int i = colEnd; i >= colStart; i--) {
-              list.add(matrix[rowEnd][i]);
-          }
+        for (int i = colEnd; i >= colStart; i--) {
+          list.add(matrix[rowEnd][i]);
+        }
       }
       rowEnd--;
       //down to top
       if (colStart <= colEnd) {
-          for (int i = rowEnd; i >= rowStart; i--) {
-              list.add(matrix[i][colStart]);
-          }
+        for (int i = rowEnd; i >= rowStart; i--) {
+          list.add(matrix[i][colStart]);
+        }
       }
       colStart++;
     }

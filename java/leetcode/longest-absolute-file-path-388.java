@@ -24,7 +24,6 @@ public class Solution {
      level[depth] = s.length() - depth + 1;
      if (depth - 1 >= 0) {
        level[depth] += level[depth - 1];
-         //System.out.println(depth + "  val "+ (depth - 1) + " : " + level[depth]);
      }
      if (s.contains(".")) {
        max = Math.max(max, level[depth] - 1);

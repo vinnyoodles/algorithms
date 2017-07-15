@@ -39,7 +39,6 @@ public class ValidWordAbbr {
   public boolean isUnique(String word) {
     if (word.isEmpty()) return true;
     String key = word.charAt(0) +""+ (word.length() - 2) +""+ word.charAt(word.length() - 1) +"";
-    System.out.println(key);
     return !map.containsKey(key)|| map.get(key).equals(word);
   }
 }
