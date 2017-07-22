@@ -75,6 +75,7 @@ The mapping can be either frequency to element or element to frequency.
 - For problems regarding depth of a tree, BFS is usually the go to algorithm for traversal.
 This is because will iterate the depths in increasing order. Here's an example/skeleton for implementing BFS
 on a binary tree.
+
 ```java
 while (!queue.isEmpty()) {
   int numberOfNodesInDepth = queue.size();
@@ -89,3 +90,97 @@ while (!queue.isEmpty()) {
 #### Array
 - When the brute force solution requires nested for loops such that the runtime becomes a polynomial, try to apply the two, three or n pointers to the problem to reduce the complexity.
 For example, the common 2 sum problem has a brute force of N^2 where you find all possible pairs, however if the array is already sorted and pairs are found using two pointers then the runtime can be reduced to O(N)
+- Many window problems involving the use of two pointers to solve problems such as find the best subarray to meet some requirement can use the following template.
+
+```java
+void function(int[] arr) {
+  int start = 0;
+  int end = 0;
+  
+  // Iterate until the end pointer reaches the end of the array.
+  while (end < arr.length) {
+    // Check if the requirement for the subarray is met
+    if (!isRequirementMet()) {
+    	/**
+    	 * Performa logic to increment the subarray such as:
+		 * sum += arr[end];
+    	 * min = Math.min(min, arr[end]);
+    	 * etc...
+    	 */
+    }
+    
+    // Always increment the end pointer.
+    end ++;
+    
+    // Now check with the current subarray to see if it needs to be shortened.
+    while (isSubarrayTooBig()) {
+    	start++;
+    	
+    	/**
+    	 * This will also involve logic to decrease the variable that maintains the state 
+    	 * of the subarray such as:
+    	 * sum -= arr[start];
+    	 */
+    }
+  }
+  
+  // Return the final state of the subarray after the end pointer 
+  // has traversed the entire array.
+  return sum;
+}
+```
+- Problems regarding subsets, combinations, or permutations (scroll to the top for thedefinitions) 
+of a given array all follow a similar template:
+
+```java
+List<List<Integer>> function(int[] arr) {
+  // The goal is to return a list that contains either subsets, combinations, or permutations.
+  List<List<Integer>> result = new ArrayList<>();
+	
+  // We need a data structure to maintain the elements in the current set.
+  List<Integer> current = new ArrayList<>();
+	
+  // Iterate through the array recursively and when a valid subset, combination, or 
+  // permutation occurs then add it to the resultant list.
+  int start = 0;
+  helper(arr, start, current, result);
+	
+  return result;
+}
+
+void helper(int[] arr, int index, List<Integer> current, List<List<Integer>> result) {
+  if (checkIfCurrentIsValid(current)) {
+	  result.add(current);
+	  
+	  /**
+	   * Now depending on the problem, there may be a return statement after adding the 
+	   * current set into the resultant list.
+	   * For example, when finding a valid permutation there are no more elements to add 
+	   * so the logic must backtrack. Therefore, we could add a return statement here.
+	   */
+	   return;
+  }
+  
+  // Now comes the part where we add/remove elements from the current list.
+  for (int i = index; i < arr.length; i ++) {
+    /**
+     * Depending on the problems, the rules may differ. However, they will generally follow 
+     * these rules:
+     * 1. When the current element *can* be added, then it should be added.
+     * 2. If no more elements can be added, then the last element in the set should be removed.
+     */
+     
+     // Add the current element.
+     current.add(arr[i]);
+     
+     // Call the function again with the updated current set.
+     helper(arr, i + 1, current, result);
+     
+     // Remove the last element in the current set, this is the key part
+     // because this is how backtracking is achieved.
+     current.remove(current.size() - 1);
+  }
+  
+  // There is nothing to return because the resultant list is a mutable parameter.
+}
+```
