@@ -63,6 +63,11 @@ public class GraphMaker {
         writer.close();
     }
 
+    public void delete(String filename) {
+        File file = new File(filename);
+        file.delete();
+    }
+
     private int getRandomVertex(int n) {
         return (int) (Math.random() * n);
     }

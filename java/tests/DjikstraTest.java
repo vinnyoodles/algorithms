@@ -5,5 +5,6 @@ public class DjikstraTest {
     public static void main(String[] args) throws Exception {
         GraphMaker graphMaker = new GraphMaker();
         graphMaker.make("input.in", 10, 11);
+        graphMaker.delete("input.in");
     }
 }
