@@ -1,6 +1,8 @@
 import subprocess, os
 
-TESTS = ['PrimsTest', 'KruskalTest', 'DjikstraTest', 'PriorityQueueTest']
+TESTS = ['PrimTest', 'KruskalTest', 'DjikstraTest', 'PriorityQueueTest']
+DATASTRUCTURES = ['PriorityQueue']
+ALGORITHMS = ['PrimMST', 'KruskalMST', 'DjikstraPathFinder']
 BIN_DIR = 'bin'
 
 try:
@@ -14,9 +16,11 @@ if not os.path.isdir('bin'):
     os.makedirs('bin')
 
 try:
-    dependencies = ['tools/GraphMaker.java', 'datastructures/PriorityQueue.java']
+    dependencies = ['tools/GraphMaker.java']
+    datastructures = list(map((lambda name: 'datastructures/%s.java' % name), DATASTRUCTURES))
+    algorithms = list(map((lambda name: 'algorithms/%s.java' % name), ALGORITHMS))
     tests = list(map((lambda name: 'tests/%s.java' % name), TESTS))
-    files = dependencies + tests
+    files = dependencies + datastructures + algorithms + tests
     print('Compiling the following files:\n\t%s\n' % '\n\t'.join(files))
     subprocess.check_output(['javac', '-d', BIN_DIR] + files)
 

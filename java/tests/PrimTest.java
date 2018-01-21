@@ -1,6 +1,7 @@
+import algorithms.PrimMST;
 import tools.GraphMaker;
 
-public class PrimsTest {
+public class PrimTest {
     public static void main(String[] args) throws Exception {
         GraphMaker graphMaker = new GraphMaker();
         graphMaker.make("input.in", 10, 11);

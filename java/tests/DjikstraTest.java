@@ -1,3 +1,4 @@
+import algorithms.DjikstraPathFinder;
 import tools.GraphMaker;
 
 public class DjikstraTest {

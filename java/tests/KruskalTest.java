@@ -1,3 +1,4 @@
+import algorithms.KruskalMST;
 import tools.GraphMaker;
 
 public class KruskalTest {
