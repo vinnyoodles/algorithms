@@ -16,7 +16,7 @@ public class PriorityQueue {
     }
 
     public int size() {
-        return heap.size();
+        return heap.size() - 1;
     }
 
     public boolean isEmpty() {
