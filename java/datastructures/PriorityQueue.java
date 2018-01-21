@@ -1,4 +1,6 @@
+package datastructures;
 import java.util.*;
+
 /**
  * This is strictly a min heap.
  */
