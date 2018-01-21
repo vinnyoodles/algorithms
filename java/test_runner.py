@@ -1,8 +1,8 @@
 import subprocess, os
 
-TESTS = ['PrimTest', 'KruskalTest', 'DjikstraTest', 'PriorityQueueTest']
+TESTS = ['PrimTest', 'KruskalTest', 'DijkstraTest', 'PriorityQueueTest']
 DATASTRUCTURES = ['PriorityQueue']
-ALGORITHMS = ['PrimMST', 'KruskalMST', 'DjikstraPathFinder']
+ALGORITHMS = ['PrimMST', 'KruskalMST', 'DijkstraPathFinder']
 BIN_DIR = 'bin'
 
 try:
