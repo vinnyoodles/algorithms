@@ -9,7 +9,7 @@ public class PriorityQueueTest {
     }
 
     private static void testRun(int count) throws Exception {
-        PriorityQueue q = new PriorityQueue();
+        PriorityQueue<Integer> q = new PriorityQueue<>();
         for (int i = 0; i < count; i ++) {
             q.add((int) (Math.random() * Integer.MAX_VALUE));
         }

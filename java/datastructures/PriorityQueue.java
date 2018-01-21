@@ -4,15 +4,15 @@ import java.util.*;
 /**
  * This is strictly a min heap.
  */
-public class PriorityQueue {
-    private List<Integer> heap;
+public class PriorityQueue<T extends Comparable<? super T>> {
+    private List<T> heap;
     public PriorityQueue() {
         heap = new ArrayList<>();
 
         // The first element in the heap is unused.
         // This is because the root element of the heap
         // has an index of 1.
-        heap.add(0);
+        heap.add(null);
     }
 
     public int size() {
@@ -31,7 +31,7 @@ public class PriorityQueue {
      * until a parent is found where it is not greater or the value becomes
      * the heap.
      */
-    public void add(int value) {
+    public void add(T value) {
         // Add the value to the end of the heap.
         // This is represented as the right most child in the last level of the tree/heap.
         heap.add(value);
@@ -45,11 +45,11 @@ public class PriorityQueue {
         // The index of the inserted value.
         int index = heap.size() - 1;
         int parentIndex = index / 2;
-        int parentVal = heap.get(parentIndex);
+        T parentVal = heap.get(parentIndex);
 
         // Keep iterating until the value becomes the root or 
         // the parent of the value is less than the value.
-        while (index > 1 && parentVal > value) {
+        while (index > 1 && parentVal.compareTo(value) > 0) {
             // Swap the parent and the current node.
             heap.set(index, parentVal);
             heap.set(parentIndex, value);
@@ -64,14 +64,14 @@ public class PriorityQueue {
     /**
      * Return the root node of the heap.
      * Then, grab the right most node in the last level and set that as the root.
-     * Then, compare the new root with its two children and swap with the greater value.
-     * This process continues until the parent is the greater than both children.
+     * Then, compare the new root with its two children and swap with the lesser value.
+     * This process continues until the parent is lesser than both children.
      */
-    public int poll() {
+    public T poll() {
         if (isEmpty()) {
-            return -1;
+            return null;
         }
-        int min = heap.get(1);
+        T min = heap.get(1);
 
         // Grab the last element and set it as the root.
         int index = heap.size() - 1;
@@ -86,16 +86,26 @@ public class PriorityQueue {
         // Keep iterating until the value becomes the last value in the heap 
         // or the value is less than both left and right children.
         while (index < heap.size() && (
-            (leftIndex < heap.size() && heap.get(index) > heap.get(leftIndex)) ||
-            (rightIndex < heap.size() && heap.get(index) > heap.get(rightIndex)))) {
+            (leftIndex < heap.size() && heap.get(leftIndex).compareTo(heap.get(index)) > 0) ||
+            (rightIndex < heap.size() && heap.get(rightIndex).compareTo(heap.get(index)) > 0))) {
 
             // Check if the right child exists.
-            int right = rightIndex < heap.size() ? heap.get(rightIndex) : Integer.MAX_VALUE;
+            T right = rightIndex < heap.size() ? heap.get(rightIndex) : null;
             // Check if the left child exists.
-            int left = leftIndex < heap.size() ? heap.get(leftIndex) : Integer.MAX_VALUE;
-            // Grab the lesser of the two.
-            int childIndex = left > right ? rightIndex : leftIndex;
-            int temp = heap.get(index);
+            T left = leftIndex < heap.size() ? heap.get(leftIndex) : null;
+
+            int childIndex = -1;
+
+            if (left == null) {
+                break;
+            } else if (right == null) {
+                childIndex = leftIndex;
+            } else {
+               // Grab the lesser of the two.
+               childIndex = right.compareTo(left) > 0 ? rightIndex : leftIndex;
+            }
+
+            T temp = heap.get(index);
 
             // Swap parent and child elements.
             heap.set(index, heap.get(childIndex));
@@ -109,5 +119,4 @@ public class PriorityQueue {
 
         return min;
     }
-
 }
