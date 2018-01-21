@@ -1,8 +1,9 @@
-import subprocess, os
+import subprocess, os, sys
 
 TESTS = ['PrimTest', 'KruskalTest', 'DijkstraTest', 'PriorityQueueTest']
 DATASTRUCTURES = ['PriorityQueue']
 ALGORITHMS = ['PrimMST', 'KruskalMST', 'DijkstraPathFinder']
+DEPENDENCIES = ['GraphMaker', 'Utilities']
 BIN_DIR = 'bin'
 
 try:
@@ -16,7 +17,7 @@ if not os.path.isdir('bin'):
     os.makedirs('bin')
 
 try:
-    dependencies = ['tools/GraphMaker.java']
+    dependencies = list(map((lambda name: 'tools/%s.java' % name), DEPENDENCIES))
     datastructures = list(map((lambda name: 'datastructures/%s.java' % name), DATASTRUCTURES))
     algorithms = list(map((lambda name: 'algorithms/%s.java' % name), ALGORITHMS))
     tests = list(map((lambda name: 'tests/%s.java' % name), TESTS))
@@ -29,9 +30,9 @@ except:
     exit(1)
 
 for test in TESTS:
-    print('Running %s' % test, end=': ')
+    print('Running %s:' % test)
+    sys.stdout.flush()
     try:
         subprocess.run(['java', '-cp', BIN_DIR, test])
-        print(u'\u2713')
     except:
         print('Test crashed: %s' % test)
