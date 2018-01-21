@@ -35,30 +35,17 @@ public class PriorityQueue<T extends Comparable<? super T>> {
         // Add the value to the end of the heap.
         // This is represented as the right most child in the last level of the tree/heap.
         heap.add(value);
-        if (isEmpty()) {
-
-            // Return now because there is only one element in the heap.
-            // Therefore, it has nothing to compare to.
-            return;
-        }
 
         // The index of the inserted value.
-        int index = heap.size() - 1;
-        int parentIndex = index / 2;
-        T parentVal = heap.get(parentIndex);
+        int index = size();
 
         // Keep iterating until the value becomes the root or 
         // the parent of the value is less than the value.
-        while (index > 1 && parentVal.compareTo(value) > 0) {
-            // Swap the parent and the current node.
-            heap.set(index, parentVal);
-            heap.set(parentIndex, value);
-
-            // Update the variables.
-            index = parentIndex;
-            parentIndex = index / 2;
-            parentVal = heap.get(parentIndex);
+        while (index > 1 && heap.get(index / 2).compareTo(value) > 0) {
+            heap.set(index, heap.get(index / 2));
+            index = index / 2;
         }
+        heap.set(index, value);
     }
 
     /**
@@ -68,55 +55,37 @@ public class PriorityQueue<T extends Comparable<? super T>> {
      * This process continues until the parent is lesser than both children.
      */
     public T poll() {
-        if (isEmpty()) {
-            return null;
-        }
+        if (isEmpty()) return null;
         T min = heap.get(1);
 
         // Grab the last element and set it as the root.
-        int index = heap.size() - 1;
+        int index = size();
         heap.set(1, heap.get(index));
         heap.remove(index);
-
-        // Update the index to be the root node.
-        index = 1;
-        int leftIndex = index * 2;
-        int rightIndex = leftIndex + 1;
-
-        // Keep iterating until the value becomes the last value in the heap 
-        // or the value is less than both left and right children.
-        while (index < heap.size() && (
-            (leftIndex < heap.size() && heap.get(leftIndex).compareTo(heap.get(index)) > 0) ||
-            (rightIndex < heap.size() && heap.get(rightIndex).compareTo(heap.get(index)) > 0))) {
-
-            // Check if the right child exists.
-            T right = rightIndex < heap.size() ? heap.get(rightIndex) : null;
-            // Check if the left child exists.
-            T left = leftIndex < heap.size() ? heap.get(leftIndex) : null;
-
-            int childIndex = -1;
-
-            if (left == null) {
-                break;
-            } else if (right == null) {
-                childIndex = leftIndex;
-            } else {
-               // Grab the lesser of the two.
-               childIndex = right.compareTo(left) > 0 ? rightIndex : leftIndex;
-            }
-
-            T temp = heap.get(index);
-
-            // Swap parent and child elements.
-            heap.set(index, heap.get(childIndex));
-            heap.set(childIndex, temp);
-
-            // Update variables
-            index = childIndex;
-            leftIndex = index * 2;
-            rightIndex = leftIndex + 1;
-        }
+        if (!isEmpty()) heapify(1);
 
         return min;
+    }
+
+    private void heapify(int index) {
+        int left = 2 * index;
+        int right = left + 1;
+        int minIndex = index;
+
+        if (left < heap.size() && heap.get(left).compareTo(heap.get(minIndex)) < 0) {
+            minIndex = left;
+        }
+
+        if (right < heap.size() && heap.get(right).compareTo(heap.get(minIndex)) < 0) {
+            minIndex = right;
+        }
+
+        if (minIndex != index) {
+            T temp = heap.get(index);
+            heap.set(index, heap.get(minIndex));
+            heap.set(minIndex, temp);
+            heapify(minIndex);
+        }
+
     }
 }

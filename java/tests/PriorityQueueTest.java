@@ -4,11 +4,12 @@ import java.util.*;
 public class PriorityQueueTest {
     public static void main(String[] args) throws Exception {
         for (int i = 0; i < 5; i ++) {
-            testRun(10000 + ((int) (Math.random() * 10000)));
+            testRandomSort(10000 + ((int) (Math.random() * 10000)));
         }
     }
 
-    private static void testRun(int count) throws Exception {
+    private static void testRandomSort(int count) throws Exception {
+        System.out.printf("\tRandomSort (n = %d)\n", count);
         PriorityQueue<Integer> q = new PriorityQueue<>();
         for (int i = 0; i < count; i ++) {
             q.add((int) (Math.random() * Integer.MAX_VALUE));
@@ -30,6 +31,7 @@ public class PriorityQueueTest {
             if (curr < prev) {
                 throw new Exception("Incorrect poll order");
             }
+            prev = curr;
         }
     }
 }
