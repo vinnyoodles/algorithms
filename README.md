@@ -72,8 +72,14 @@ This contains my practice and preparation for interview/whiteboarding problems. 
 
 ## Testing
 
+For the Javascript code:
 ```javascript
 npm test
+```
+
+For the Java code (this needs to be run in the `java` directory):
+```
+python test_runner.py
 ```
 
 ## Style Guides
