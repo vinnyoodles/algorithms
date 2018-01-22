@@ -1,6 +1,6 @@
 import subprocess, os, sys
 
-TESTS = ['PrimTest', 'KruskalTest', 'DijkstraTest', 'PriorityQueueTest']
+TESTS = ['MSTTest', 'DijkstraTest', 'PriorityQueueTest']
 DATASTRUCTURES = ['PriorityQueue']
 ALGORITHMS = ['PrimMST', 'KruskalMST', 'DijkstraPathFinder']
 DEPENDENCIES = ['GraphMaker', 'Utilities']
