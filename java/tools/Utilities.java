@@ -20,6 +20,22 @@ public class Utilities {
         }
     }
 
+    public static void compare(int[][] expected, int[][] actual) throws Exception {
+        if (expected == actual) return;
+
+        String message = "Incorrect matrix";
+
+        if (expected == null || actual == null || expected.length != actual.length) {
+            throw new Exception(message);
+        }
+
+        for (int i = 0; i < expected.length; i ++) {
+            for (int j = 0; j < expected[i].length; j ++) {
+                if (expected[i][j] != actual[i][j]) throw new Exception(message);
+            }
+        }
+    }
+
     public static String toString(int[] a) {
         if (a == null) return "[]";
         StringBuilder b = new StringBuilder();
