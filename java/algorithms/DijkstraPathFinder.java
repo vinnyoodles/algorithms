@@ -1,28 +1,12 @@
 package algorithms;
 import datastructures.PriorityQueue;
+import datastructures.GraphNode;
 
 public class DijkstraPathFinder {
-    private class Node implements Comparable<Node> {
-        int weight;
-        int id;
-        public Node(int i, int w) {
-            id = i;
-            weight = w;
-        }
-
-        public int compareTo(Node n) {
-            return this.weight - n.weight;
-        }
-
-        public int index() {
-            return id - 1;
-        }
-    }
-
     public int[] find(int[][] matrix, int start) {
         int length = matrix.length;
         int[] dist = new int[length];
-        PriorityQueue<Node> queue = new PriorityQueue<>();
+        PriorityQueue<GraphNode> queue = new PriorityQueue<>();
         boolean[] visited = new boolean[length];
 
         for (int i = 0; i < length; i ++) {
@@ -30,9 +14,9 @@ public class DijkstraPathFinder {
             dist[i] = (i + 1) == start ? 0 : Integer.MAX_VALUE;
         }
 
-        queue.add(new Node(start, 0));
+        queue.add(new GraphNode(start, 0));
         while (!queue.isEmpty()) {
-            Node curr = queue.poll();
+            GraphNode curr = queue.poll();
             int[] neighbors = matrix[curr.index()];
             visited[curr.index()] = true;
 
@@ -42,7 +26,7 @@ public class DijkstraPathFinder {
 
                 dist[i] = Math.min(dist[i], dist[curr.index()] + neighbors[i]);
                 if (!visited[i]) {
-                    queue.add(new Node(i + 1, dist[i]));
+                    queue.add(new GraphNode(i + 1, dist[i]));
                 }
             }
         }
