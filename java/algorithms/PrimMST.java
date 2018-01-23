@@ -8,6 +8,7 @@ public class PrimMST {
     public int[][] findMST(int[][] matrix) {
         PriorityQueue<GraphEdge> queue = new PriorityQueue<>();
         boolean[] visited = new boolean[matrix.length];
+        boolean[][] inQueue = new boolean[matrix.length][matrix.length];
 
         // A tree with n nodes will have n - 1 edges.
         int count = matrix.length - 1;
@@ -23,8 +24,10 @@ public class PrimMST {
             visited[node - 1] = true;
             for (int i = 0; i < neighbors.length; i ++) {
                 // Skip visited nodes and edges of 0 weight.
-                if (visited[i] || neighbors[i] == 0) continue;
+                if (i == node - 1 || inQueue[i][node - 1] || neighbors[i] == 0) continue;
 
+                inQueue[i][node - 1] = true;
+                inQueue[node - 1][i] = true;
                 queue.add(new GraphEdge(node, i + 1, neighbors[i]));
             }
 

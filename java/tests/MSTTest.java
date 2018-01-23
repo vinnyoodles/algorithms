@@ -53,5 +53,24 @@ public class MSTTest {
 
         Utilities.compare(mst, prim.findMST(matrix));
         // Utilities.compare(mst, kruskal.findMST(matrix));
+
+        matrix = new int[][] {
+            { 0, 5,  0, 9,  1 },
+            { 5, 0,  3, 14, 2 },
+            { 0, 3,  0, 4,  7 },
+            { 9, 14, 4, 0,  0 },
+            { 1, 2,  7, 0,  0 }
+        };
+
+        mst = new int[][] {
+            { 0, 0, 0, 0, 1 },
+            { 0, 0, 1, 0, 1 },
+            { 0, 1, 0, 1, 0 },
+            { 0, 0, 1, 0, 0 },
+            { 1, 1, 0, 0, 0 }
+        };
+
+        Utilities.compare(mst, prim.findMST(matrix));
+        // Utilities.compare(mst, kruskal.findMST(matrix));
     }
 }
