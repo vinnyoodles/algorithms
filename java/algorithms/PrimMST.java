@@ -5,7 +5,7 @@ import datastructures.GraphEdge;
 import tools.Utilities;
 
 public class PrimMST {
-    public int[][] findMST(int[][] matrix) throws Exception {
+    public int[][] findMST(int[][] matrix) {
         PriorityQueue<GraphEdge> queue = new PriorityQueue<>();
         boolean[] visited = new boolean[matrix.length];
 
@@ -29,10 +29,14 @@ public class PrimMST {
             }
 
             GraphEdge minEdge = queue.poll();
-            int neighbor = minEdge.adjacent(node);
-            mst[neighbor - 1][node - 1] = 1;
-            mst[node - 1][neighbor - 1] = 1;
-            node = neighbor;
+
+            // If both nodes of the edge have been visited, then skip this edge.
+            if (visited[minEdge.getA() - 1] && visited[minEdge.getB() - 1]) continue;
+            mst[minEdge.getA() - 1][minEdge.getB() - 1] = 1;
+            mst[minEdge.getB() - 1][minEdge.getA() - 1] = 1;
+
+            // The next node will be the one that has not been visited yet.
+            node = visited[minEdge.getA() - 1] ? minEdge.getB() : minEdge.getA();
             count --;
         }
 
