@@ -23,7 +23,9 @@ public class Utilities {
     public static void compare(int[][] expected, int[][] actual) throws Exception {
         if (expected == actual) return;
 
-        String message = "Incorrect matrix";
+        String message = Utilities.exceptionMessage(
+            Utilities.toString(expected), Utilities.toString(actual)
+        );
 
         if (expected == null || actual == null || expected.length != actual.length) {
             throw new Exception(message);
@@ -44,6 +46,24 @@ public class Utilities {
         for (int i = 0; i < a.length; i ++) {
             b.append(a[i]);
             if (i < a.length - 1) b.append(", ");
+        }
+        b.append("]");
+
+        return b.toString();
+    }
+
+    public static String toString(int[][] a) {
+        if (a == null) return "[[]]";
+        StringBuilder b = new StringBuilder();
+
+        b.append("\n[\n");
+        for (int i = 0; i < a.length; i ++) {
+            b.append("\t[");
+            for (int j = 0; j < a[i].length; j ++) {
+                b.append(a[i][j]);
+                if (j < a[i].length - 1) b.append(", ");
+            }
+            b.append("]\n");
         }
         b.append("]");
 
