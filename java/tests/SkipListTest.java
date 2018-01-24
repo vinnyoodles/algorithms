@@ -4,8 +4,10 @@ import tools.Utilities;
 public class SkipListTest {
     static SkipList sList;
     public static void main(String[] args) throws Exception {
-        for (int i = 0; i < 5; i ++)
+        for (int i = 0; i < 5; i ++) {
             testSimpleUniqueInsertion(50 + ((int) (Math.random() * 50)));
+            testSimpleInsertion(50 + ((int) (Math.random() * 50)));
+        }
         testUniqueFind();
     }
 
@@ -19,6 +21,18 @@ public class SkipListTest {
 
         for (int i = 0; i < array.length - 1; i ++) {
             if (array[i] >= array[i + 1]) throw new Exception(String.format("Invalid sorted order: %s", Utilities.toString(array)));
+        }
+    }
+
+    private static void testSimpleInsertion(int length) throws Exception {
+        System.out.printf("\tTestSimpleInsertion (n = %d)\n", length);
+        SkipList list = new SkipList();
+        addToList(list, length, null);
+
+        int[] array = list.toArray();
+
+        for (int i = 0; i < array.length - 1; i ++) {
+            if (array[i] > array[i + 1]) throw new Exception(String.format("Invalid sorted order: %s", Utilities.toString(array)));
         }
     }
 
@@ -39,8 +53,9 @@ public class SkipListTest {
             int value;
             do {
                 value = (int) (Math.random() * numOfElements) + 1;
-            } while (visited[value]);
-            visited[value] = true;
+            } while (visited != null && visited[value]);
+            if (visited != null)
+                visited[value] = true;
 
             list.add(value);
         }

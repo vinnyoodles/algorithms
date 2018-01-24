@@ -41,6 +41,9 @@ public class SkipList {
 
             // Linked list insertion.
             SkipNode next = prev.next;
+            if (next != null && next.value < value) {
+                throw new Exception(String.format("Inserting at invalid location, level: %d", index));
+            }
             prev.next = new SkipNode(value);
             prev.next.next = next;
 
@@ -82,14 +85,19 @@ public class SkipList {
     private boolean find(int value, SkipNode[] path) {
         SkipNode currentNode = headerNode;
         int index = path == null ? -1 : path.length - 1;
+        boolean found = false;
 
         while (currentNode != null) {
             // Traverse horizontally.
             while (currentNode.next != null && currentNode.next.value <= value) {
-                currentNode = currentNode.next;
+                // The reason we don't just return here is because
+                // we want to find the exact location/path to level 0 for the given value.
+                // This is because we support inserting duplicates.
+                if (currentNode.next.value == value) {
+                    found = true;
+                }
 
-                if (currentNode.value == value) 
-                    return true;
+                currentNode = currentNode.next;
             }
 
             if (path != null) {
@@ -99,6 +107,6 @@ public class SkipList {
             currentNode = currentNode.child;
         }
 
-        return false;
+        return found;
     }
 }
