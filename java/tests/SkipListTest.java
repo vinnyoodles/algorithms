@@ -7,8 +7,9 @@ public class SkipListTest {
         for (int i = 0; i < 5; i ++) {
             testSimpleUniqueInsertion(50 + ((int) (Math.random() * 50)));
             testSimpleInsertion(50 + ((int) (Math.random() * 50)));
+            testUniqueFind();
+            testDelete();
         }
-        testUniqueFind();
     }
 
     private static void testSimpleUniqueInsertion(int length) throws Exception {
@@ -47,6 +48,30 @@ public class SkipListTest {
         }
     }
 
+    private static void testDelete() throws Exception {
+        System.out.println("\tTestDelete");
+        SkipList list = new SkipList();
+        int[] freq = new int[10];
+        int count = freq.length;
+
+        for (int i = 0; i < count; i ++) {
+            int value = (int) (Math.random() * freq.length);
+            freq[value] ++;
+            list.add(value);
+        }
+
+        int index = 0;
+        while (count > 0) {
+            if (freq[index] > 0) {
+                if (!list.delete(index)) throw new Exception("Failed to delete element");
+                count --;
+                freq[index] --;
+            } else if (list.delete(index)) throw new Exception("Deleted element that does not exist");
+
+            index = (index + 1) % freq.length;
+        }
+    }
+
     private static void addToList(SkipList list, int numOfElements, boolean[] visited) throws Exception {
         for (int i = 0; i < numOfElements; i ++) {
             // Find a unique element to insert.
@@ -59,6 +84,5 @@ public class SkipListTest {
 
             list.add(value);
         }
-
     }
 }

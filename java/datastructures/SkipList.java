@@ -54,8 +54,48 @@ public class SkipList {
         length ++;
     }
 
-    public boolean delete(int value) {
-        return false;
+    // If the value is duplicated, then delete the first instance of value.
+    public boolean delete(int value) throws Exception {
+        SkipNode[] path = new SkipNode[max + 1];
+        // Does not exist.
+
+        SkipNode currentNode = headerNode;
+        int index = path == null ? -1 : path.length - 1;
+        boolean found = false;
+
+        while (currentNode != null) {
+            // Traverse horizontally.
+            while (currentNode.next != null && currentNode.next.value < value) {
+                currentNode = currentNode.next;
+            }
+
+            if (currentNode.next != null && currentNode.next.value == value)
+                found = true;
+
+            if (path != null) {
+                path[index--] = currentNode;
+            }
+            // Traverse vertically.
+            currentNode = currentNode.child;
+        }
+
+        if (!found) return false;
+
+        for (SkipNode pathNode : path) {
+            // There is nothing to delete if the next node is null.
+            if (pathNode.next == null) continue;
+
+            // This is a safety check as this should never be true.
+            if (pathNode.next.value < value) throw new Exception("Invalid path");
+
+            // Perform linked list deletion of the next node.
+            if (pathNode.next.value == value) {
+                SkipNode temp = pathNode.next.next;
+                pathNode.next = temp;
+            }
+        }
+        length --;
+        return true;
     }
 
     public boolean find(int value) {
@@ -96,7 +136,6 @@ public class SkipList {
                 if (currentNode.next.value == value) {
                     found = true;
                 }
-
                 currentNode = currentNode.next;
             }
 
