@@ -13,6 +13,8 @@ public class MSTTest {
         prim = new PrimMST();
         kruskal = new KruskalMST();
         testSimple();
+        for (int i = 0; i < 10; i ++)
+            testCompare();
     }
 
     private static void testSimple() throws Exception {
@@ -93,5 +95,36 @@ public class MSTTest {
 
         Utilities.compare(mst, prim.findMST(matrix));
         Utilities.compare(mst, kruskal.findMST(matrix));
+    }
+
+    private static void testCompare() throws Exception {
+        int[] params = Utilities.getRandomGraphParameters();
+        System.out.printf("\tGraph parametrs (n = %d, m = %d)\n", params[0], params[1]);
+        int[][] matrix = graphMaker.make(5, 10);//params[0], params[1]);
+        int[][] primTree = prim.findMST(matrix);
+        int[][] kruskalTree = kruskal.findMST(matrix);
+        int primWeight = getTreeSumWeight(matrix, primTree);
+        int kruskalWeight = getTreeSumWeight(matrix, kruskalTree);
+        if (primWeight != kruskalWeight) {
+            throw new Exception(
+                String.format("Weights of min spanning tree do not match: %d, %d, \nGraph: %s\nPrim\'s: %s\nKruskal\'s: %s",
+                    primWeight,
+                    kruskalWeight,
+                    Utilities.toString(matrix),
+                    Utilities.toString(primTree),
+                    Utilities.toString(kruskalTree))
+            );
+        }
+    }
+
+    private static int getTreeSumWeight(int[][] matrix, int[][] tree) {
+        int weight = 0;
+        for (int i = 0; i < matrix.length; i ++) {
+            for (int j = i + 1; j < matrix.length; j ++) {
+                if (tree[i][j] == 1)
+                    weight += matrix[i][j];
+            }
+        }
+        return weight;
     }
 }
