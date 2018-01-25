@@ -31,7 +31,7 @@ public class DisjointSet {
     }
 
     public void union(int i, int j) throws Exception {
-        if (i < 0 || i >= parent.length || j < 0 || j >= parent.length)
+        if (i <= 0 || i >= parent.length || j <= 0 || j >= parent.length)
             throw new Exception("Invalid elements");
         int ip = find(i);
         int jp = find(j);

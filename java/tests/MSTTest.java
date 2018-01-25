@@ -35,7 +35,7 @@ public class MSTTest {
         };
 
         Utilities.compare(mst, prim.findMST(matrix));
-        // Utilities.compare(mst, kruskal.findMST(matrix));
+        Utilities.compare(mst, kruskal.findMST(matrix));
 
         matrix = new int[][] {
             { 0, 1, 3, 4 },
@@ -52,7 +52,7 @@ public class MSTTest {
         };
 
         Utilities.compare(mst, prim.findMST(matrix));
-        // Utilities.compare(mst, kruskal.findMST(matrix));
+        Utilities.compare(mst, kruskal.findMST(matrix));
 
         matrix = new int[][] {
             { 0, 5,  0, 9,  1 },
@@ -71,7 +71,7 @@ public class MSTTest {
         };
 
         Utilities.compare(mst, prim.findMST(matrix));
-        // Utilities.compare(mst, kruskal.findMST(matrix));
+        Utilities.compare(mst, kruskal.findMST(matrix));
 
         matrix = new int[][] {
             { 0,  20, 9,  13, 0,  0 },
@@ -92,6 +92,6 @@ public class MSTTest {
         };
 
         Utilities.compare(mst, prim.findMST(matrix));
-        // Utilities.compare(mst, kruskal.findMST(matrix));
+        Utilities.compare(mst, kruskal.findMST(matrix));
     }
 }
