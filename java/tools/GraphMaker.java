@@ -23,7 +23,9 @@ public class GraphMaker {
             int v = u + 1;
             int w = 1 + (int) (Math.random() * EDGE_MAX);
             visited.add(u + "," + v);
+            visited.add(v + "," + u);
             matrix[u - 1][v - 1] = w;
+            matrix[v - 1][u - 1] = w;
             m --;
         }
 
@@ -38,12 +40,14 @@ public class GraphMaker {
             }
 
             String hashString = u + "," + v;
-            if (visited.contains(hashString)) {
+            String hashString2 = v + "," + u;
+            if (visited.contains(hashString) || visited.contains(hashString2)) {
                 continue;
             }
 
             visited.add(hashString);
             matrix[u][v] = w;
+            matrix[v][u] = w;
             m --;
         }
 
