@@ -33,6 +33,7 @@ for test in TESTS:
     print('Running %s:' % test)
     sys.stdout.flush()
     try:
-        subprocess.run(['java', '-cp', BIN_DIR, test])
+        subprocess.run(['java', '-cp', BIN_DIR, test], check=True)
     except:
         print('Test crashed: %s' % test)
+        exit(1)
