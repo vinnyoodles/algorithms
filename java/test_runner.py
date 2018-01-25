@@ -1,7 +1,7 @@
 import subprocess, os, sys
 
-TESTS = ['MSTTest', 'DijkstraTest', 'PriorityQueueTest', 'SkipListTest']
-DATASTRUCTURES = ['PriorityQueue', 'GraphNode', 'GraphEdge', 'SkipList']
+TESTS = ['MSTTest', 'DijkstraTest', 'PriorityQueueTest', 'SkipListTest', 'DisjointSetTest']
+DATASTRUCTURES = ['PriorityQueue', 'GraphNode', 'GraphEdge', 'SkipList', 'DisjointSet']
 ALGORITHMS = ['PrimMST', 'KruskalMST', 'DijkstraPathFinder']
 DEPENDENCIES = ['GraphMaker', 'Utilities']
 BIN_DIR = 'bin'
